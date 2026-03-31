@@ -1,0 +1,13 @@
+{
+  "name": "ualibraries-libapps",
+  "version": "1.0.0",
+  "description": "University of Arizona Libraries customizations and workflows for Springshare/LibApps.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^8.0.1"
+  }
+}

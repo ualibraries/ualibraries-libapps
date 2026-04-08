@@ -19,6 +19,10 @@ ualibraries-libapps/
 └── vite.config.js
 ```
 
+## Before you begin
+- Node.js version 22.12+ is required (upgrade your `node` version if necessary)
+
+
 ## How to Use Vite in This Repo
 
 Install dependencies:

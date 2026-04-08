@@ -1,0 +1,14 @@
+/* --- Start global styles --- */
+
+/* Hide "Powered by Springshare" footer */
+#s-lib-footer-public {
+  display: none;
+}
+
+/* Override Springshare body-font-sans variable */
+body {
+  --bs-font-sans-serif: proxima-nova, calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-body-font-family: var(--bs-font-sans-serif);
+}
+
+/* --- End global styles --- */

@@ -47,9 +47,9 @@ export default defineConfig({
 
             $("#header_ua, #header_site, #footer_site").remove();
 
-            $("body").prepend(`<div id="ualibraries-header"></div>`);
+            //$("body").prepend(`<div id="ualibraries-header"></div>`);
+            //$("body").append(`<div id="ualibraries-footer"></div>`);
             $("body").append(`
-              <div id="ualibraries-footer"></div>
               <script type="module" src="/helper.js"></script>
               <script type="module" src="/src/main.js"></script>
             `);

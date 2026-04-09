@@ -1,3 +1,4 @@
+import "./azlist.css";
 import "./global_styles.css";
 
 // Remove Springshare stylesheet references from page source

@@ -1,0 +1,101 @@
+#az-search-col-1 > nav {
+  background-color: #e2e9eb;
+  border-top: none;
+  border-bottom: none;
+}
+
+#s-lg-az-filters {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+#s-lg-az-filter-cols {
+  gap: 12px;
+}
+
+#s-lg-az-filter-cols > .col-md-10,
+#s-lg-az-filter-cols > .col-md-10 > .row {
+  display: contents;
+}
+
+#s-lg-az-filter-cols div.row > div {
+  border-right: none;
+}
+
+#col-search {
+  flex: 0 0 100%;
+  padding: 0 !important;
+}
+
+#col-search > div {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#col-search input.s-lg-az-search {
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  height: 36px;
+}
+
+/* Hide the default SpringShare icons */
+#col-search img,
+.col-subjects img,
+.col-types img,
+.col-subjects .fa-angle-down,
+.col-types .fa-angle-down {
+  display: none;
+}
+
+.col-subjects,
+.col-types {
+  flex: 1 1 0;
+  min-width: 200px;
+  padding: 0 !important;
+}
+
+#s-lg-az-filter-cols .select2-container .select2-selection--multiple {
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  padding-left: 0.75rem;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 36px;
+  min-height: unset !important;
+  background-color: #ffffff;
+}
+
+#s-lg-az-filter-cols .select2-search__field {
+  height: 14px;
+}
+
+#s-lg-az-filter-cols > .col-md-2 {
+  width: auto;
+  padding: 0 !important;
+  gap: 12px;
+  flex-grow: unset !important;
+}
+
+/* Flatten the nested flex container holding the buttons */
+#s-lg-az-filter-cols > .col-md-2 > .d-flex {
+  display: contents !important;
+}
+
+#s-lg-az-filter-cols button {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+button.s-lg-az-reset {
+  display: block !important;
+  background-color: #e2e9eb;
+  color: #8b0015;
+  border: 2px solid #8b0015;
+  margin-left: 1rem;
+}
+
+button.s-lg-az-reset:hover {
+  display: block !important;
+  background-color: #8b0015;
+  color: #fff;
+}

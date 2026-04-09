@@ -1,3 +1,4 @@
+import "./src/azlist.css";
 import "./src/style.css";
 
 async function loadHTML(selector, url) {

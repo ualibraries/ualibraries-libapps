@@ -10,14 +10,25 @@ This project uses [Vite](https://vite.dev/) as its build and development tool.
 ualibraries-libapps/
 ├── src/
 │   ├── main.js
-│   └── style.css
+│   └── global_styles.css
 ├── html/
-├── helper.js           # Helper functions to load local html files to the mount points
+|   |–– global_footer.html
+|   |–– global_header.html
+|   |–– libanswers
+|   |–– libcal
+|   └── libguides
+|       |–– az_database
+|       └── groups           # Directories for group-specific HTML
+├── helper.js                # Helper functions to load local html files to the mount points
 ├── package.json
-├── proxy-list.js       # Fetch live Springshare pages for local development
+├── proxy-list.js            # Fetch live Springshare pages for local development
 ├── README.md
 └── vite.config.js
 ```
+
+## Before you begin
+- Node.js version 22.12+ is required (upgrade your `node` version if necessary)
+
 
 ## How to Use Vite in This Repo
 

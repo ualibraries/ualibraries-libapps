@@ -1,5 +1,5 @@
 import "./src/azlist.css";
-import "./src/style.css";
+import "./src/global_styles.css";
 
 async function loadHTML(selector, url) {
   const res = await fetch(url);
@@ -8,8 +8,8 @@ async function loadHTML(selector, url) {
 }
 
 async function init() {
-  await loadHTML("#vite-header", "/html/header.html");
-  await loadHTML("#vite-footer", "/html/footer.html");
+  await loadHTML("#ualibraries-header", "/html/global_header.html");
+  await loadHTML("#ualibraries-footer", "/html/global_footer.html");
 }
 
 init();

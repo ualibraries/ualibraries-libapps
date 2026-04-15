@@ -38,12 +38,11 @@ export default defineConfig({
             const $ = cheerio.load(html);
 
             $("#header_ua, #header_site, #footer_site").remove();
-            $("head").append(
-              `<link href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/5.1.2/css/arizona-bootstrap.min.css" rel="stylesheet" integrity="sha384-Q2ESMuWgX+vvxe/YNIMpv4B2IrnXY4pftywzhO9l8b+QWfEqEswTxXz28vbNfNX9" crossorigin="anonymous">`,
-            );
-            $("body").prepend(`<div id="vite-header"></div>`);
+            $('link[href="/lookfeel.css"]').remove(); // Remove Springshare's Look & Feel CSS reference
+
+            $("body").prepend(`<div id="ualibraries-header"></div>`);
             $("body").append(`
-              <div id="vite-footer"></div>
+              <div id="ualibraries-footer"></div>
               <script type="module" src="/helper.js"></script>
             `);
 

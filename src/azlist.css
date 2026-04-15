@@ -5,8 +5,14 @@
 }
 
 #s-lg-az-filters {
-  padding-top: 32px;
   padding-bottom: 32px;
+}
+
+#s-lg-az-filter-cols::before {
+  content: "Find a database";
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-bottom: 0.25rem;
 }
 
 #s-lg-az-filter-cols {

@@ -71,10 +71,6 @@
   background-color: #ffffff;
 }
 
-#s-lg-az-filter-cols .select2-search__field {
-  height: 14px;
-}
-
 #s-lg-az-filter-cols > .col-md-2 {
   width: auto;
   padding: 0 !important;
@@ -104,4 +100,52 @@ button.s-lg-az-reset:hover {
   display: block !important;
   background-color: #8b0015;
   color: #fff;
+}
+
+#az-public-mobile-filters-default {
+  border: none;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #e2e9eb;
+  border-radius: unset;
+}
+
+#az-public-mobile-filters-default::before {
+  content: "Find a database";
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+#az-public-mobile-filters-default > div.form-group {
+  margin-top: 20px;
+}
+
+#az-public-mobile-filters-default
+  .select2-container
+  .select2-selection--multiple,
+#az-public-mobile-filters-modal
+  .select2-container
+  .select2-selection--multiple {
+  background-color: #fff;
+  border-radius: 6px;
+  padding-left: 0.938rem;
+  padding-right: 0.938rem;
+}
+
+#s-lg-az-filter-cols .select2-search__field,
+#az-public-mobile-filters-default .select2-search__field {
+  line-height: normal;
+}
+
+.az-public-mobile-filters .select2-container--bootstrap5 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#az-public-mobile-filters-collapse-default {
+  display: block;
+}
+
+.az-public-mobile-filters a.collapsible.az-toggle {
+  display: none;
 }

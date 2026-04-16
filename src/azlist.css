@@ -108,6 +108,8 @@ button.s-lg-az-reset:hover {
   margin-right: 0;
   background-color: #e2e9eb;
   border-radius: unset;
+  display: flex;
+  flex-direction: column;
 }
 
 #az-public-mobile-filters-default::before {
@@ -117,6 +119,14 @@ button.s-lg-az-reset:hover {
 }
 
 #az-public-mobile-filters-default > div.form-group {
+  order: 1;
+}
+
+#az-public-mobile-filters-default > div.d-flex.align-items-center {
+  order: 2;
+}
+
+#az-public-mobile-filters-group-default {
   margin-top: 20px;
 }
 
@@ -128,8 +138,8 @@ button.s-lg-az-reset:hover {
   .select2-selection--multiple {
   background-color: #fff;
   border-radius: 6px;
-  padding-left: 0.938rem;
-  padding-right: 0.938rem;
+  padding: 0 0.938rem;
+  min-height: 32px;
 }
 
 #s-lg-az-filter-cols .select2-search__field,
@@ -140,6 +150,13 @@ button.s-lg-az-reset:hover {
 .az-public-mobile-filters .select2-container--bootstrap5 {
   padding-left: 0;
   padding-right: 0;
+  margin-bottom: 0.75rem;
+}
+
+.az-public-mobile-filters input {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  margin-bottom: 0.75rem;
 }
 
 #az-public-mobile-filters-collapse-default {
@@ -148,4 +165,10 @@ button.s-lg-az-reset:hover {
 
 .az-public-mobile-filters a.collapsible.az-toggle {
   display: none;
+}
+
+.az-public-mobile-filters .btn.btn-primary {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  width: 50%;
 }

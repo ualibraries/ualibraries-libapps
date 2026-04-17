@@ -38,12 +38,12 @@ export default defineConfig({
             const $ = cheerio.load(html);
 
             $("#header_ua, #header_site, #footer_site").remove();
-            $('link[href="/lookfeel.css"]').remove(); // Remove Springshare's Look & Feel CSS reference
-
+           
             $("body").prepend(`<div id="ualibraries-header"></div>`);
             $("body").append(`
               <div id="ualibraries-footer"></div>
               <script type="module" src="/helper.js"></script>
+              <script src="/src/main.js"></script>
             `);
 
             res.setHeader("Content-Type", "text/html");

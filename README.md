@@ -1,9 +1,8 @@
-# ualibraries-libapps
+# LibApps customizations
+This repository houses customizations and workflows for the University of Arizona Libraries Springshare/LibApps instance. It is used for the purpose of version controlling assets and templates in a system that does not support version control. Assets (CSS/JS/images) are deployed to an S3 bucket for use in LibApps, while HTML templates are tracked solely for version control purposes. 
 
-University of Arizona Libraries customizations and workflows for Springshare/LibApps.
 
 ## Project Structure
-
 This project uses [Vite](https://vite.dev/) as its build and development tool.
 
 ```text
@@ -26,11 +25,56 @@ ualibraries-libapps/
 └── vite.config.js
 ```
 
-## Before you begin
+### Global, system, and group assets
+LibApps supports system & group styles. Springshare also supplies default styles for their apps, but we are intentionally excluding these styles (using JavaScript) in order to reduce the amount of CSS customizations that are required, and to depend directly on default Arizona Bootstrap styles.
+
+#### System styles
+**System** styles apply to all content within a given app (LibCal, LibAnswers, or LibGuides).
+System styles are housed in the `ualibraries-libapps/src/<app_name>` folder, and are prefixed with the system's name.
+For example, LibGuides system styles would be housed in:
+```txt
+ualibraries-libapps/
+├── src/
+|   |–– libanswers
+|   |–– libcal
+|   └── libguides
+|       └── libguides_styles.css
+```
+
+#### Group styles
+**Group** styles only apply to content that belongs to that specific group.
+Group styles are housed in the `ualibraries-libapps/src/<app_name>/groups` folder, and follow the naming convention: `group__group-name.css`.
+For example, group styles for a groups titled "Special Collections" and "HSL" within LibGuides would be housed in:
+```txt
+ualibraries-libapps/
+├── src/
+|   |–– libanswers
+|   |–– libcal
+|   └── libguides
+|       └── groups
+|           └── group__special-collections.css
+|           └── group__hsl.css
+```
+
+#### Global styles
+**Global** styles apply to all systems across LibApps. LibApps does not support truly "global" styles that apply to all content within LibApps. For our own purposes, we identify "global" styles as styles we are utilizing across LibApps.
+Global styles are housed in the `ualibraries-libapps/src` folder, and are prefixed with `global_`.
+
+For example:
+```txt
+ualibraries-libapps/
+├── src/
+|   └── global_styles.css
+```
+
+
+## Local development
+
+### Before you begin
 - Node.js version 22.12+ is required (upgrade your `node` version if necessary)
 
 
-## How to Use Vite in This Repo
+### How to use Vite in this repo
 
 Install dependencies:
 
@@ -50,7 +94,7 @@ Create a production build:
 npm run build
 ```
 
-## Updating Vite and Related Dependencies
+## Updating Vite and related dependencies
 
 This project currently relies on Vite via `devDependencies`.
 
@@ -86,7 +130,7 @@ npm run dev
 npm run build
 ```
 
-## How vite.config.js Works
+## How vite.config.js works
 
 The Vite config in this repo does two things during local development:
 

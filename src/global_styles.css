@@ -11,4 +11,14 @@ body {
   --bs-body-font-family: var(--bs-font-sans-serif);
 }
 
+/* Hide Springshare's popover markup */
+#s-lib-popover-title,
+#s-lib-popover-content {
+  display: none;
+}
+
+img {
+  max-width:100%;
+}
+
 /* --- End global styles --- */

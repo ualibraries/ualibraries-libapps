@@ -118,7 +118,7 @@ Use it on external pages with:
 <script src="https://<your-bucket-or-host>/ualibraries-libapps.js"></script>
 ```
 
-Deploy the production artifacts in one command (uploads only files in `dist/`):
+Deploy production artifacts and image assets in one command (uploads files in `dist/` and `images/`):
 
 ```bash
 npm run deploy
@@ -128,6 +128,7 @@ This runs `npm run build` and then:
 
 ```bash
 aws s3 sync dist s3://ualibraries-libapps-sandbox
+aws s3 sync images s3://ualibraries-libapps-sandbox/images
 ```
 
 ## Updating Vite and related dependencies

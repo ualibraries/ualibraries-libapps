@@ -1,18 +1,18 @@
+/* --- Start global styles --- */
+
 #az-search-col-1 > nav {
-  background-color: #e2e9eb;
-  border-top: none;
-  border-bottom: none;
+  background-color: #e9ecef;
+  border-radius: 0.375rem;
 }
 
 #s-lg-az-filters {
-  padding-bottom: 32px;
+  padding: 1rem 1.5rem 1.65rem;
 }
 
 #s-lg-az-filter-cols::before {
   content: "Find a database";
   font-weight: 500;
   font-size: 1.2em;
-  margin-bottom: 0.25rem;
 }
 
 #s-lg-az-filter-cols {
@@ -24,23 +24,12 @@
   display: contents;
 }
 
-#s-lg-az-filter-cols div.row > div {
-  border-right: none;
-}
-
 #col-search {
-  flex: 0 0 100%;
+  flex-basis: 100%;
   padding: 0 !important;
 }
 
-#col-search > div {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 #col-search input.s-lg-az-search {
-  border: 1px solid #ced4da;
-  border-radius: 6px;
   height: 36px;
 }
 
@@ -53,27 +42,35 @@
   display: none;
 }
 
+#col-search > div {
+  flex-grow: 1;
+}
+
 .col-subjects,
 .col-types {
-  flex: 1 1 0;
-  min-width: 200px;
   padding: 0 !important;
 }
 
+#s-lg-az-filter-cols .select2-container {
+  flex-grow: 1;
+}
+
 #s-lg-az-filter-cols .select2-container .select2-selection--multiple {
-  border: 1px solid #ced4da;
-  border-radius: 6px;
-  padding-left: 0.75rem;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
   height: 36px;
-  min-height: unset !important;
-  background-color: #ffffff;
+}
+
+#s-lg-az-filter-cols .select2-container .select2-search__field {
+  margin-top: 0;
+  margin-left: 0;
+  padding: 0.375rem 0.75rem;
+  height: 100%;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
 }
 
 #s-lg-az-filter-cols > .col-md-2 {
   width: auto;
-  padding: 0 !important;
+  padding: 0;
   gap: 12px;
   flex-grow: unset !important;
 }
@@ -84,91 +81,19 @@
 }
 
 #s-lg-az-filter-cols button {
-  padding-top: 0.25rem !important;
-  padding-bottom: 0.25rem !important;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 button.s-lg-az-reset {
   display: block !important;
-  background-color: #e2e9eb;
-  color: #8b0015;
-  border: 2px solid #8b0015;
+  background-color: #e9ecef;
+  color: #ab0520;
+  border: 2px solid #ab0520;
   margin-left: 1rem;
 }
 
 button.s-lg-az-reset:hover {
-  display: block !important;
   background-color: #8b0015;
   color: #fff;
-}
-
-#az-public-mobile-filters-default {
-  border: none;
-  margin-left: 0;
-  margin-right: 0;
-  background-color: #e2e9eb;
-  border-radius: unset;
-  display: flex;
-  flex-direction: column;
-}
-
-#az-public-mobile-filters-default::before {
-  content: "Find a database";
-  font-weight: 500;
-  font-size: 1.2em;
-}
-
-#az-public-mobile-filters-default > div.form-group {
-  order: 1;
-}
-
-#az-public-mobile-filters-default > div.d-flex.align-items-center {
-  order: 2;
-}
-
-#az-public-mobile-filters-group-default {
-  margin-top: 20px;
-}
-
-#az-public-mobile-filters-default
-  .select2-container
-  .select2-selection--multiple,
-#az-public-mobile-filters-modal
-  .select2-container
-  .select2-selection--multiple {
-  background-color: #fff;
-  border-radius: 6px;
-  padding: 0 0.938rem;
-  min-height: 32px;
-}
-
-#s-lg-az-filter-cols .select2-search__field,
-#az-public-mobile-filters-default .select2-search__field {
-  line-height: normal;
-}
-
-.az-public-mobile-filters .select2-container--bootstrap5 {
-  padding-left: 0;
-  padding-right: 0;
-  margin-bottom: 0.75rem;
-}
-
-.az-public-mobile-filters input {
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
-  margin-bottom: 0.75rem;
-}
-
-#az-public-mobile-filters-collapse-default {
-  display: block;
-}
-
-.az-public-mobile-filters a.collapsible.az-toggle {
-  display: none;
-}
-
-.az-public-mobile-filters .btn.btn-primary {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  width: 50%;
 }

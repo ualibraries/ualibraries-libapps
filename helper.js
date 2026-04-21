@@ -5,8 +5,8 @@ async function loadHTML(selector, url) {
 }
 
 async function init() {
-  await loadHTML("#ualibraries-header", "/html/global_header.html");
-  await loadHTML("#ualibraries-footer", "/html/global_footer.html");
+  //await loadHTML("#ualibraries-header", "/html/global_header.html");
+  //await loadHTML("#ualibraries-footer", "/html/global_footer.html");
 }
 
 init();

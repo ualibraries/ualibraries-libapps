@@ -1,0 +1,35 @@
+version: 2.1
+
+orbs:
+  aws-cli: circleci/aws-cli@5.4.1
+
+jobs:
+  build_and_deploy:
+    docker:
+      - image: cimg/node:24.14
+    environment:
+      AWS_REGION: us-west-2
+      S3_BUCKET: ualibraries-libapps-sandbox
+    steps:
+      - checkout
+      - aws-cli/setup
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Build project
+          command: npm run build
+      - run:
+          name: Deploy dist and images to S3
+          command: |
+            aws s3 sync dist "s3://${S3_BUCKET}" --delete
+            aws s3 sync images "s3://${S3_BUCKET}/images" --delete
+
+workflows:
+  deploy_on_main:
+    jobs:
+      - build_and_deploy:
+          filters:
+            branches:
+              only:
+                - main

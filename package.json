@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "deploy": "npm run build && aws s3 sync dist s3://${S3_BUCKET:-ualibraries-libapps-sandbox} && aws s3 sync images s3://${S3_BUCKET:-ualibraries-libapps-sandbox}/images"
   },
   "devDependencies": {
     "vite": "^8.0.1"

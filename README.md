@@ -1,6 +1,6 @@
-# ualibraries-libapps
+# LibApps customizations
 
-University of Arizona Libraries customizations and workflows for Springshare/LibApps.
+This repository houses customizations and workflows for the University of Arizona Libraries Springshare/LibApps instance. It is used for the purpose of version controlling assets and templates in a system that does not support version control. Assets (CSS/JS/images) are deployed to an S3 bucket for use in LibApps, while HTML templates are tracked solely for version control purposes.
 
 ## Project Structure
 
@@ -26,11 +26,62 @@ ualibraries-libapps/
 └── vite.config.js
 ```
 
-## Before you begin
+### Global, system, and group assets
+
+LibApps supports system & group styles. Springshare also supplies default styles for their apps, but we are intentionally excluding these styles (using JavaScript) in order to reduce the amount of CSS customizations that are required, and to depend directly on default Arizona Bootstrap styles.
+
+#### System styles
+
+**System** styles apply to all content within a given app (LibCal, LibAnswers, or LibGuides).
+System styles are housed in the `ualibraries-libapps/src/<app_name>` folder, and are prefixed with the system's name.
+For example, LibGuides system styles would be housed in:
+
+```txt
+ualibraries-libapps/
+├── src/
+|   |–– libanswers
+|   |–– libcal
+|   └── libguides
+|       └── libguides_styles.css
+```
+
+#### Group styles
+
+**Group** styles only apply to content that belongs to that specific group.
+Group styles are housed in the `ualibraries-libapps/src/<app_name>/groups` folder, and follow the naming convention: `group__group-name.css`.
+For example, group styles for a groups titled "Special Collections" and "HSL" within LibGuides would be housed in:
+
+```txt
+ualibraries-libapps/
+├── src/
+|   |–– libanswers
+|   |–– libcal
+|   └── libguides
+|       └── groups
+|           └── group__special-collections.css
+|           └── group__hsl.css
+```
+
+#### Global styles
+
+**Global** styles apply to all systems across LibApps. LibApps does not support truly "global" styles that apply to all content within LibApps. For our own purposes, we identify "global" styles as styles we are utilizing across LibApps.
+Global styles are housed in the `ualibraries-libapps/src` folder, and are prefixed with `global_`.
+
+For example:
+
+```txt
+ualibraries-libapps/
+├── src/
+|   └── global_styles.css
+```
+
+## Local development
+
+### Before you begin
+
 - Node.js version 22.12+ is required (upgrade your `node` version if necessary)
 
-
-## How to Use Vite in This Repo
+### How to use Vite in this repo
 
 Install dependencies:
 
@@ -50,7 +101,58 @@ Create a production build:
 npm run build
 ```
 
-## Updating Vite and Related Dependencies
+This command bundles `src/main.js` to:
+
+```txt
+dist/ualibraries-libapps.css
+dist/ualibraries-libapps.js
+```
+
+Use it on external pages with:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://<your-bucket-or-host>/ualibraries-libapps.css"
+/>
+<script src="https://<your-bucket-or-host>/ualibraries-libapps.js"></script>
+```
+
+Deploy production artifacts and image assets in one command (uploads files in `dist/` and `images/`):
+
+```bash
+npm run deploy
+```
+
+This runs `npm run build` and then:
+
+```bash
+aws s3 sync dist s3://ualibraries-libapps-sandbox
+aws s3 sync images s3://ualibraries-libapps-sandbox/images
+```
+
+## CircleCI deployment on main
+
+This repository includes a CircleCI pipeline in `.circleci/config.yml`.
+
+- Trigger: every push to the `main` branch (including merge commits).
+- Steps: checkout -> install dependencies -> build -> deploy `dist/` and `images/` to S3.
+
+These environment variables need to be set in the CircleCI project settings:
+
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_REGION` (defaults to `us-west-2` in the config)
+- `S3_BUCKET` (defaults to `ualibraries-libapps-sandbox` in the config)
+
+The deployment uses:
+
+```bash
+aws s3 sync dist s3://$S3_BUCKET --delete
+aws s3 sync images s3://$S3_BUCKET/images --delete
+```
+
+## Updating Vite and related dependencies
 
 This project currently relies on Vite via `devDependencies`.
 
@@ -86,7 +188,7 @@ npm run dev
 npm run build
 ```
 
-## How vite.config.js Works
+## How vite.config.js works
 
 The Vite config in this repo does two things during local development:
 
@@ -116,7 +218,7 @@ If a prefix matches, the middleware:
 1. Builds the upstream URL from the matching target + remainder of the request path.
 2. Fetches the upstream HTML.
 3. Removes the old header/footer. (`#header_ua`, `#header_site`, `#footer_site`).
-4. Injects local mount points (`#vite-header`, `#vite-footer`).
+4. Injects local mount points (`#ualibraries-header`, `#ualibraries-footer`).
 5. Appends `<script type="module" src="/helper.js"></script>` so local helper logic runs.
 6. Returns transformed HTML to the browser.
 

@@ -1,5 +1,3 @@
-import "./src/global_styles.css";
-
 async function loadHTML(selector, url) {
   const res = await fetch(url);
   const html = await res.text();

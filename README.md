@@ -131,6 +131,27 @@ aws s3 sync dist s3://ualibraries-libapps-sandbox
 aws s3 sync images s3://ualibraries-libapps-sandbox/images
 ```
 
+## CircleCI deployment on main
+
+This repository includes a CircleCI pipeline in `.circleci/config.yml`.
+
+- Trigger: every push to the `main` branch (including merge commits).
+- Steps: checkout -> install dependencies -> build -> deploy `dist/` and `images/` to S3.
+
+These environment variables need to be set in the CircleCI project settings:
+
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_REGION` (defaults to `us-west-2` in the config)
+- `S3_BUCKET` (defaults to `ualibraries-libapps-sandbox` in the config)
+
+The deployment uses:
+
+```bash
+aws s3 sync dist s3://$S3_BUCKET --delete
+aws s3 sync images s3://$S3_BUCKET/images --delete
+```
+
 ## Updating Vite and related dependencies
 
 This project currently relies on Vite via `devDependencies`.

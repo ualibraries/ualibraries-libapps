@@ -206,15 +206,12 @@ button.s-lg-az-reset:hover {
   border: 2px solid #378dbd;
   color: #001c48;
   text-decoration: none;
-  font-size: 16px;
-  min-width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 10px;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
   box-sizing: border-box;
   cursor: pointer;
+  flex: 0 0 auto;
 }
 
 #s-lg-az-index .btn-group #s-lg-az-first-all {
@@ -292,6 +289,38 @@ button.s-lg-az-reset:hover {
   margin-right: 0.5rem;
 }
 
+.az-item a.az-toggle,
+.az-item button.az-toggle,
+.az-item h4.az-toggle {
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 3rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  padding-left: 0;
+}
+
+.az-entry-collapsible-box {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.25rem 0.25rem;
+  border: 1px solid #dee2e6;
+}
+
 #col2 {
   margin-top: 93px;
+}
+
+#s-lg-az-helpful-links-body .accordion-body {
+  padding-bottom: 0.25rem;
+}
+
+.az-helpful-links-row {
+  margin-bottom: 1rem;
+}
+
+#s-lg-az-icon-legend div.az-icon-legend-key > img {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
 }

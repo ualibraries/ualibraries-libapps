@@ -68,6 +68,7 @@
   margin-top: 0;
   margin-left: 0;
   padding: 0.375rem 0.75rem;
+  width: 100% !important;
   height: 100%;
   border: 1px solid #dee2e6;
   border-radius: 0.375rem;
@@ -185,6 +186,59 @@ button.s-lg-az-reset:hover {
   border-radius: 0.375rem;
 }
 
+/* select inline */
+#s-lg-az-filters .select2-selection__choice__remove,
+.az-public-mobile-filters .select2-selection__choice__remove {
+  display: none;
+}
+
+/* select dropdown */
+.select2-container--bootstrap5 .select2-dropdown {
+  border: 0;
+}
+
+.select2-container--bootstrap5 .select2-dropdown .select2-results__options {
+  max-height: 250px;
+  overflow-y: auto;
+}
+.select2-container--bootstrap5 .select2-dropdown .select2-results__option {
+  color: #495057;
+  padding: 0.75rem 1.25rem;
+  margin: 0 0;
+}
+
+.select2-container--bootstrap5
+  .select2-dropdown
+  .select2-results__option.select2-results__option--highlighted {
+  background-color: #f4f6fa;
+  color: #2a7993;
+}
+
+.select2-container--bootstrap5
+  .select2-dropdown
+  .select2-results__option.select2-results__option--selected {
+  background-color: #f4f6fa;
+  color: #2a7993;
+  position: relative;
+}
+
+.select2-container--bootstrap5
+  .select2-dropdown
+  .select2-results__option.select2-results__option--selected:after {
+  top: 50%;
+  display: block;
+  position: absolute;
+  transform: translateY(-50%);
+  height: 0.75rem;
+  width: 0.75rem;
+  content: "";
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: #2a7993;
+  mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 11'%3e%3cpath fill='var%28--bs-component-hover-color%29' d='M4.89557 6.49823L2.79487 4.26513C2.26967 3.70683 1.38251 3.70683 0.857309 4.26513C0.375593 4.77721 0.375593 5.57574 0.857309 6.08781L4.74989 10.2257C5.14476 10.6455 5.81176 10.6455 6.20663 10.2257L13.1427 2.85252C13.6244 2.34044 13.6244 1.54191 13.1427 1.02984C12.6175 0.471537 11.7303 0.471536 11.2051 1.02984L6.06096 6.49823C5.74506 6.83403 5.21146 6.83403 4.89557 6.49823Z'/%3e%3c/svg%3e");
+  right: 1.25rem;
+}
+
 /* --- End search bar styles --- */
 /* --- Start index styles --- */
 #s-lg-az-index .btn-group {
@@ -235,6 +289,10 @@ button.s-lg-az-reset:hover {
 .s-lg-db-panel-title {
   padding-bottom: 0.25rem;
   border-bottom: 2px solid #ced4da;
+}
+
+.az-item {
+  padding-bottom: 1.25rem;
 }
 
 .az-image {

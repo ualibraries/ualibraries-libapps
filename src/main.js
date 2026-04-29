@@ -1,5 +1,5 @@
-import "./azlist.css";
 import "./global_styles.css";
+import "./libguides/az_database/main.css";
 
 // Remove Springshare stylesheet references from page source
 document.addEventListener("DOMContentLoaded", () => {

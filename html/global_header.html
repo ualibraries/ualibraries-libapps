@@ -1,7 +1,25 @@
 <div id="ualibraries-banner" class="bg-cool-gray py-2">
   <div class="container">
-    <div class="row">
-      <div class="col-12"><a href="https://lib.arizona.edu"><img src="https://ualibraries-libapps-sandbox.s3.us-west-2.amazonaws.com/images/logos/ual_logo.svg" alt="Visit the main library website" width="200"></a></div>
+    <div class="row justify-content-between">
+      <a class="col-auto" href="https://lib.arizona.edu"><img
+          src="https://ualibraries-libapps-sandbox.s3.us-west-2.amazonaws.com/images/logos/ual_logo.svg"
+          alt="Visit the main library website" width="200"></a>
+      <div class="col-auto dropdown">
+        <button class="btn btn-libapps-header" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="material-symbols-rounded">menu</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end border border-white">
+          <li><a class="dropdown-item" href="#">Library homepage</a></li>
+          <li><a class="dropdown-item" href="#">Library hours</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Library search</a></li>
+          <li><a class="dropdown-item" href="#">Research databases</a></li>
+          <li><a class="dropdown-item" href="#">Find your librarian</a></li>
+          <li><a class="dropdown-item" href="#">Book a study room</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

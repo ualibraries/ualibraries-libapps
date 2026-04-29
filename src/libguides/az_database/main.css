@@ -140,6 +140,13 @@
   }
 }
 
+#col2 .sidebar-boxes .accordion {
+  @media (max-width: 991px) {
+    margin-top: 1.5rem;
+    margin-bottom: 0 !important;
+  }
+}
+
 #s-lg-az-helpful-links-body .accordion-body {
   padding-bottom: 0.25rem;
 }

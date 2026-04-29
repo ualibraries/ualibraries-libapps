@@ -14,3 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
     links.forEach((link) => link.parentNode.removeChild(link));
   });
 });
+
+function collapseAccordionsOnMobile() {
+  if (window.innerWidth < 992) {
+    document
+      .querySelectorAll(".accordion-collapse.show")
+      .forEach((openPanel) => {
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(openPanel);
+        bsCollapse.hide();
+      });
+  }
+}
+
+// Run on page load
+collapseAccordionsOnMobile();
+
+// Run on window resize
+window.addEventListener("resize", collapseAccordionsOnMobile);

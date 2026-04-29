@@ -159,6 +159,11 @@ button.s-lg-az-reset:hover {
   width: 50%;
 }
 
+#az-public-mobile-filters-default .btn.btn-primary img,
+#az-public-mobile-filters-modal .btn.btn-primary img {
+  display: none;
+}
+
 /* Mobile modal */
 #az-public-mobile-filters-modal {
   margin-top: 1rem;
@@ -188,6 +193,16 @@ button.s-lg-az-reset:hover {
   border-radius: 0.375rem;
 }
 
+/* select arrow */
+#s-lg-az-filter-cols .select2-container .select2-search__field,
+#az-public-mobile-filters-default .select2-container .select2-search__field,
+#az-public-mobile-filters-modal .select2-container .select2-search__field {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+
 /* select inline */
 #s-lg-az-filters .select2-selection__choice__remove,
 .az-public-mobile-filters .select2-selection__choice__remove {
@@ -197,6 +212,7 @@ button.s-lg-az-reset:hover {
 /* select dropdown */
 .select2-container--bootstrap5 .select2-dropdown {
   border: 0;
+  box-shadow: var(--bs-box-shadow);
 }
 
 .select2-container--bootstrap5 .select2-dropdown .select2-results__options {
@@ -239,4 +255,8 @@ button.s-lg-az-reset:hover {
   background-color: #2a7993;
   mask-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 11'%3e%3cpath fill='var%28--bs-component-hover-color%29' d='M4.89557 6.49823L2.79487 4.26513C2.26967 3.70683 1.38251 3.70683 0.857309 4.26513C0.375593 4.77721 0.375593 5.57574 0.857309 6.08781L4.74989 10.2257C5.14476 10.6455 5.81176 10.6455 6.20663 10.2257L13.1427 2.85252C13.6244 2.34044 13.6244 1.54191 13.1427 1.02984C12.6175 0.471537 11.7303 0.471536 11.2051 1.02984L6.06096 6.49823C5.74506 6.83403 5.21146 6.83403 4.89557 6.49823Z'/%3e%3c/svg%3e");
   right: 1.25rem;
+}
+
+.modal-open .select2-container--bootstrap5 .select2-dropdown {
+  z-index: 1056;
 }

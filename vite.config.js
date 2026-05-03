@@ -45,7 +45,13 @@ export default defineConfig({
             let html = await fetchRes.text();
             const $ = cheerio.load(html);
 
-            $("#header_ua, #header_site, #footer_site").remove();
+            $(
+              "#header_ua, #header_site, #footer_site, #ualibraries-banner, footer.footer",
+            ).remove();
+
+            $(
+              "link[href='https://ualibraries-libapps-sandbox.s3.us-west-2.amazonaws.com/ualibraries-libapps.css'], script[src='https://ualibraries-libapps-sandbox.s3.us-west-2.amazonaws.com/ualibraries-libapps.js']",
+            ).remove();
 
             $("body").prepend(`<div id="ualibraries-header"></div>`);
             $("body").append(`

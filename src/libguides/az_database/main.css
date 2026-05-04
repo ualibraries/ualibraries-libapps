@@ -1,0 +1,122 @@
+@import "./search_bar.css";
+@import "./az_item.css";
+
+a {
+  font-weight: 500;
+}
+
+/* --- Start index styles --- */
+#s-lg-az-index .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#s-lg-az-index .btn-group > .btn {
+  position: relative;
+  float: none;
+  margin-left: 0;
+  border-radius: 0;
+}
+
+/* Base styling for all letter buttons */
+#s-lg-az-index .btn-group .btn {
+  background-color: #fff;
+  border: 2px solid #378dbd;
+  color: #001c48;
+  text-decoration: none;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+#s-lg-az-index .btn-group #s-lg-az-first-all {
+  min-width: 80px;
+}
+
+#s-lg-az-index .btn-group .btn.active-alpha {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#s-lg-az-index .btn-group .btn:hover:not(:disabled) {
+  background-color: #e9ecef;
+}
+/* --- End index styles --- */
+
+#s-lg-az-results-title {
+  display: none;
+}
+
+.s-lg-db-panel-title {
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #ced4da;
+}
+
+#col1 {
+  @media (max-width: 991px) {
+    order: 1;
+  }
+}
+
+#col2 {
+  @media (min-width: 992px) {
+    margin-top: 93px;
+  }
+}
+
+#col2 .sidebar-boxes .accordion {
+  @media (max-width: 991px) {
+    margin-top: 1.5rem;
+    margin-bottom: 0 !important;
+  }
+}
+
+#s-lg-az-helpful-links-body .accordion-body {
+  padding-bottom: 0.25rem;
+}
+
+.az-helpful-links-row {
+  margin-bottom: 1rem;
+}
+
+#s-lg-az-trials-body .az-flags {
+  margin-bottom: 0;
+}
+
+a.az-new-trial-popular-view-toggle[aria-expanded="true"] span.if-collapsed {
+  display: none;
+}
+
+a.az-new-trial-popular-view-toggle[aria-expanded="false"]
+  span.if-not-collapsed {
+  display: none;
+}
+
+#s-lg-az-subject-resources-body h2 {
+  font-size: 1.25rem;
+  color: #494f58;
+}
+
+.az-subject-specialist-image {
+  display: block;
+  max-width: 4.375rem;
+  max-height: 4.375rem;
+  margin: 0 auto;
+}
+
+#s-lg-az-icon-legend div.az-icon-legend-key > img {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
+
+#s-lib-scroll-top {
+  position: fixed;
+  bottom: 50%;
+  right: 5px;
+  display: none;
+  font-size: 1.5em;
+}

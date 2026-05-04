@@ -58,6 +58,10 @@
   max-width: 1.25rem;
 }
 
+.az-configured-fields {
+  font-size: 14px;
+}
+
 .az-configured-fields .d-flex {
   margin-bottom: 0.25rem;
 }

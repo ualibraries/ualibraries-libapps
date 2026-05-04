@@ -96,6 +96,18 @@ a.az-new-trial-popular-view-toggle[aria-expanded="false"]
   display: none;
 }
 
+#s-lg-az-subject-resources-body h2 {
+  font-size: 1.25rem;
+  color: #494f58;
+}
+
+.az-subject-specialist-image {
+  display: block;
+  max-width: 4.375rem;
+  max-height: 4.375rem;
+  margin: 0 auto;
+}
+
 #s-lg-az-icon-legend div.az-icon-legend-key > img {
   max-width: 1.5rem;
   max-height: 1.5rem;

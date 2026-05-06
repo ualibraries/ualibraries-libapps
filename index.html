@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>List of LibApps proxies</title>
+</head>
+
+<body>
+    <h1>List of LibApps proxies</h1>
+    <ul id="proxy-list"></ul>
+
+    <script type="module">
+        import { proxyList } from "/proxy-list.js";
+
+        const list = document.getElementById("proxy-list");
+        proxyList.forEach(({ prefix, target }) => {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = prefix;
+            link.textContent = prefix;
+            item.textContent = `${target} -> `;
+            item.appendChild(link);
+            list.appendChild(item);
+        });
+    </script>
+</body>
+
+</html>

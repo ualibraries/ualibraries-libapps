@@ -5,6 +5,26 @@ a {
   font-weight: 500;
 }
 
+/* --- Start alert styles --- */
+#s-lib-public-header .alert {
+  border-left: 0.5rem solid #f19e1f;
+}
+
+#s-lib-public-header .az-page-alert {
+  margin: 0 !important;
+}
+
+#s-lib-public-header .az-page-alert p {
+  margin-bottom: 0;
+}
+
+#s-lib-public-header .az-alert-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #212529;
+  margin-bottom: 0.5rem !important;
+}
+
 /* --- Start index styles --- */
 #s-lg-az-index .btn-group {
   display: flex;

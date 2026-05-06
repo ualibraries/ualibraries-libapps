@@ -17,7 +17,10 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-12">
-          {{page_alert_section}}
+          <div class="alert alert-warning alert-dismissible fade show mb-2 p-0" role="alert">
+            {{page_alert_section}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
           {{breadcrumbs_section}}
         </div>
       </div>

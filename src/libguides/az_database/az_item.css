@@ -13,18 +13,19 @@
   margin-bottom: 0 !important;
 }
 
-.az-image {
+.az-item .az-image {
   margin-right: 1rem;
 }
 
-.az-title {
+.az-item .az-title {
+  display: block;
   font-size: 1.125rem;
   font-weight: 500;
 }
 
-.az-flags,
-.az-icons {
-  margin-bottom: 0.5rem;
+.az-item .az-flags,
+.az-item .az-icons {
+  display: inline;
 }
 
 .az-flags span.badge {
@@ -40,12 +41,8 @@
   background-color: #3f4254;
 }
 
-.az-icons {
-  display: inline;
-}
-
 .az-icons ul {
-  display: inline-block;
+  display: inline;
   padding-left: 0;
 }
 
@@ -59,6 +56,7 @@
 }
 
 .az-configured-fields {
+  margin-top: 0.5rem;
   font-size: 14px;
 }
 

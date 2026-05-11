@@ -131,6 +131,34 @@ aws s3 sync dist s3://ualibraries-libapps-sandbox
 aws s3 sync images s3://ualibraries-libapps-sandbox/images
 ```
 
+## Visual regression testing with Playwright
+
+Visual snapshot tests are configured in `tests/visual.spec.js`.
+
+Install Playwright browsers (first time only):
+
+```bash
+npx playwright install chromium
+```
+
+Create or update baseline snapshots:
+
+```bash
+npm run test:visual:update
+```
+
+Run visual regression checks against existing snapshots:
+
+```bash
+npm run test:visual
+```
+
+Open the HTML report after a run:
+
+```bash
+npm run test:visual:report
+```
+
 ## CircleCI deployment on main
 
 This repository includes a CircleCI pipeline in `.circleci/config.yml`.

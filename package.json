@@ -6,9 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "deploy": "npm run build && aws s3 sync dist s3://${S3_BUCKET:-ualibraries-libapps-sandbox} && aws s3 sync images s3://${S3_BUCKET:-ualibraries-libapps-sandbox}/images"
+    "deploy": "npm run build && aws s3 sync dist s3://${S3_BUCKET:-ualibraries-libapps-sandbox} && aws s3 sync images s3://${S3_BUCKET:-ualibraries-libapps-sandbox}/images",
+    "test:visual": "playwright test tests/visual.spec.js",
+    "test:visual:update": "playwright test tests/visual.spec.js --update-snapshots",
+    "test:visual:report": "playwright show-report"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "vite": "^8.0.1"
   },
   "dependencies": {

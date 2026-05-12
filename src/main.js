@@ -26,6 +26,10 @@ function collapseAccordionsOnMobile() {
   }
 }
 
+/**
+ * Adds a home icon to the institution breadcrumb.
+ * @returns {void}
+ */
 function addHomeIconToBreadcrumb() {
   const homeIcon = document.createElement("img");
   homeIcon.src = "https://ualibraries-libapps-sandbox.s3.us-west-2.amazonaws.com/images/icons/home.svg";

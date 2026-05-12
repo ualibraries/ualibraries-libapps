@@ -59,4 +59,15 @@ img {
   }
 }
 
+/* --- Start breadcrumb styles --- */
+#s-lib-bc-site {
+  display: none;
+}
+
+#library-breadcrumb-home-icon {
+  border-radius: 0;
+  width: 1em;
+  height: 1em;
+}
+
 /* --- End global styles --- */

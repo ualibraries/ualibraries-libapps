@@ -32,7 +32,7 @@ function collapseAccordionsOnMobile() {
  */
 function addHomeIconToBreadcrumb() {
   const homeIcon = document.createElement("img");
-  homeIcon.src = "https://ualibraries-libapps-sandbox.s3.us-west-2.amazonaws.com/images/icons/home.svg";
+  homeIcon.src = "/images/icons/home.svg";
   homeIcon.alt = "Home";
   homeIcon.id = "library-breadcrumb-home-icon";
 
@@ -41,7 +41,8 @@ function addHomeIconToBreadcrumb() {
 
   homeIconContainer.classList.add("me-2");
 
-  const breadcrumb = document.querySelector("#s-lib-bc-customer");
+  const breadcrumb = document.querySelector("#s-lib-bc-customer a");
+  if (!breadcrumb) return;
   breadcrumb.prepend(homeIconContainer);
 }
 

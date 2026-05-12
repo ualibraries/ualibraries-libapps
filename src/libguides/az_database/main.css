@@ -140,14 +140,3 @@ a.az-new-trial-popular-view-toggle[aria-expanded="false"]
   display: none;
   font-size: 1.5em;
 }
-
-/* --- Start breadcrumb styles --- */
-li#s-lib-bc-site {
-  display: none;
-}
-
-img#library-breadcrumb-home-icon {
-  border-radius: 0;
-}
-
-/* --- End breadcrumb styles --- */

@@ -26,29 +26,8 @@ function collapseAccordionsOnMobile() {
   }
 }
 
-/**
- * Adds a home icon to the institution breadcrumb.
- * @returns {void}
- */
-function addHomeIconToBreadcrumb() {
-  const homeIcon = document.createElement("img");
-  homeIcon.src = "/images/icons/home.svg";
-  homeIcon.alt = "Home";
-  homeIcon.id = "library-breadcrumb-home-icon";
-
-  const homeIconContainer = document.createElement("span");
-  homeIconContainer.appendChild(homeIcon);
-
-  homeIconContainer.classList.add("me-2");
-
-  const breadcrumb = document.querySelector("#s-lib-bc-customer a");
-  if (!breadcrumb) return;
-  breadcrumb.prepend(homeIconContainer);
-}
-
 // Run on page load
 collapseAccordionsOnMobile();
-addHomeIconToBreadcrumb();
 
 // Run on window resize
 window.addEventListener("resize", collapseAccordionsOnMobile);

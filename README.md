@@ -164,7 +164,7 @@ npm run test:visual:report
 This repository includes a CircleCI pipeline in `.circleci/config.yml`.
 
 - Trigger: every push to the `main` branch (including merge commits).
-- Steps: checkout -> install dependencies -> build -> deploy `dist/` and `images/` to S3.
+- Steps: checkout -> install dependencies -> install Playwright Chromium -> update visual snapshots -> build -> deploy `dist/`, `images/`, and visual baseline snapshots to S3.
 
 These environment variables need to be set in the CircleCI project settings:
 
@@ -172,12 +172,14 @@ These environment variables need to be set in the CircleCI project settings:
 - `AWS_SECRET_ACCESS_KEY`
 - `AWS_REGION` (defaults to `us-west-2` in the config)
 - `S3_BUCKET` (defaults to `ualibraries-libapps-sandbox` in the config)
+- `SNAPSHOT_PREFIX` (optional, defaults to `visual-baselines`)
 
 The deployment uses:
 
 ```bash
 aws s3 sync dist s3://$S3_BUCKET --delete
 aws s3 sync images s3://$S3_BUCKET/images --delete
+aws s3 sync tests/visual.spec.js-snapshots s3://$S3_BUCKET/$SNAPSHOT_PREFIX --delete
 ```
 
 ## Updating Vite and related dependencies

@@ -10,6 +10,7 @@ jobs:
     environment:
       AWS_REGION: us-west-2
       S3_BUCKET: ualibraries-libapps-sandbox
+      SNAPSHOT_PREFIX: visual-baselines
     steps:
       - checkout
       - aws-cli/setup
@@ -17,13 +18,20 @@ jobs:
           name: Install dependencies
           command: npm ci
       - run:
+          name: Install Playwright Chromium
+          command: npx playwright install --with-deps chromium
+      - run:
+          name: Update visual baseline snapshots
+          command: npm run test:visual:update
+      - run:
           name: Build project
           command: npm run build
       - run:
-          name: Deploy dist and images to S3
+          name: Deploy dist, images, and visual snapshots to S3
           command: |
             aws s3 sync dist "s3://${S3_BUCKET}" --delete
             aws s3 sync images "s3://${S3_BUCKET}/images" --delete
+            aws s3 sync tests/visual.spec.js-snapshots "s3://${S3_BUCKET}/${SNAPSHOT_PREFIX}" --delete
 
 workflows:
   deploy_on_main:
@@ -33,3 +41,4 @@ workflows:
             branches:
               only:
                 - main
+                - story/17198_vr_ci

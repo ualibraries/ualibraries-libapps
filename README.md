@@ -182,6 +182,13 @@ aws s3 sync images s3://$S3_BUCKET/images --delete
 aws s3 sync tests/visual.spec.js-snapshots s3://$S3_BUCKET/$SNAPSHOT_PREFIX --delete
 ```
 
+## CircleCI daily visual regression
+
+This repository also includes a scheduled CircleCI workflow that runs visual regression tests every day at 12:00 UTC.
+
+- Schedule: `0 12 * * *` (UTC)
+- Steps: checkout -> install dependencies -> install Playwright Chromium -> download baseline snapshots from S3 -> run visual regression tests -> post status to Slack.
+
 ## Updating Vite and related dependencies
 
 This project currently relies on Vite via `devDependencies`.

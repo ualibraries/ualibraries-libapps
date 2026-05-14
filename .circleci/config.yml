@@ -67,7 +67,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":x: Daily visual regression failed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                    "text": ":x: Visual regression failed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
                   }
                 }
               ]
@@ -81,7 +81,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":white_check_mark: Daily visual regression passed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                    "text": ":white_check_mark: Visual regression passed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
                   }
                 }
               ]

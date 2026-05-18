@@ -19,35 +19,24 @@ jobs:
           name: Install dependencies
           command: npm ci
       - run:
-          name: Install Playwright Chromium
-          command: npx playwright install --with-deps chromium
-      - run:
-          name: Download visual baseline snapshots from S3
-          command: |
-            mkdir -p tests/visual.spec.js-snapshots
-            aws s3 sync "s3://${S3_BUCKET}/${SNAPSHOT_PREFIX}" tests/visual.spec.js-snapshots --delete
-      - run:
-          name: Run visual regression tests
-          command: npm run test:visual
-      - run:
           name: Build project
           command: npm run build
       - run:
           name: Deploy dist and images to S3
           command: |
-            aws s3 sync dist "s3://${S3_BUCKET}" --delete
+            aws s3 sync dist "s3://${S3_BUCKET}"
             aws s3 sync images "s3://${S3_BUCKET}/images" --delete
       - run:
+          name: Install Playwright Chromium
+          command: npx playwright install --with-deps chromium
+      - run:
           name: Update visual baseline snapshots
-          command: |
-            rm -rf tests/visual.spec.js-snapshots
-            npm run test:visual:update
+          command: npm run test:visual:update
       - run:
           name: Upload updated snapshots to S3
-          command: |
-            aws s3 sync tests/visual.spec.js-snapshots "s3://${S3_BUCKET}/${SNAPSHOT_PREFIX}" --delete
+          command: aws s3 sync tests/visual.spec.js-snapshots "s3://${S3_BUCKET}/${SNAPSHOT_PREFIX}" --delete
 
-  daily_visual_regression:
+  run_visual_regression_tests:
     docker:
       - image: cimg/node:24.14
     environment:
@@ -80,7 +69,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":x: Visual regression failed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                    "text": ":x: Visual regression tests failed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
                   }
                 }
               ]
@@ -94,7 +83,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": ":white_check_mark: Visual regression passed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                    "text": ":white_check_mark: Visual regression tests passed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
                   }
                 }
               ]
@@ -102,7 +91,6 @@ jobs:
       - store_artifacts:
           path: playwright-report
           destination: playwright-report
-
       - store_artifacts:
           path: test-results
           destination: test-results
@@ -110,7 +98,42 @@ jobs:
 workflows:
   deploy_on_main:
     jobs:
+      - run_visual_regression_tests:
+          filters:
+            branches:
+              only:
+                - main
+                - story/17198_vr_ci
+
+      # Normal path: visual regression tests pass, deploy automatically.
       - build_and_deploy:
+          name: build_and_deploy_auto
+          requires:
+            - run_visual_regression_tests:
+                - success
+          filters:
+            branches:
+              only:
+                - main
+                - story/17198_vr_ci
+
+      # Failure path: visual regression tests fail, require human approval.
+      - approve_visual_regression_failure:
+          type: approval
+          requires:
+            - run_visual_regression_tests:
+                - failed
+          filters:
+            branches:
+              only:
+                - main
+                - story/17198_vr_ci
+
+      # After approval, deploy anyway.
+      - build_and_deploy:
+          name: build_and_deploy_after_approval
+          requires:
+            - approve_visual_regression_failure
           filters:
             branches:
               only:
@@ -126,6 +149,6 @@ workflows:
               only:
                 - story/17198_vr_ci
     jobs:
-      - daily_visual_regression:
+      - run_visual_regression_tests:
           context:
             - slack-notification

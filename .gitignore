@@ -1,5 +1,8 @@
 node_modules
 dist
+playwright-report
+test-results
+tests/visual.spec.js-snapshots
 
 # Local .terraform directories
 **/.terraform/*

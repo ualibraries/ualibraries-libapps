@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   aws-cli: circleci/aws-cli@5.4.1
+  slack: circleci/slack@6.1.3
 
 jobs:
   build_and_deploy:
@@ -10,6 +11,7 @@ jobs:
     environment:
       AWS_REGION: us-west-2
       S3_BUCKET: ualibraries-libapps-sandbox
+      SNAPSHOT_PREFIX: visual-baselines
     steps:
       - checkout
       - aws-cli/setup
@@ -22,14 +24,127 @@ jobs:
       - run:
           name: Deploy dist and images to S3
           command: |
-            aws s3 sync dist "s3://${S3_BUCKET}" --delete
+            aws s3 sync dist "s3://${S3_BUCKET}"
             aws s3 sync images "s3://${S3_BUCKET}/images" --delete
+      - run:
+          name: Install Playwright Chromium
+          command: npx playwright install --with-deps chromium
+      - run:
+          name: Update visual baseline snapshots
+          command: npm run test:visual:update
+      - run:
+          name: Upload updated snapshots to S3
+          command: aws s3 sync tests/visual.spec.js-snapshots "s3://${S3_BUCKET}/${SNAPSHOT_PREFIX}" --delete
+
+  run_visual_regression_tests:
+    docker:
+      - image: cimg/node:24.14
+    environment:
+      AWS_REGION: us-west-2
+      S3_BUCKET: ualibraries-libapps-sandbox
+      SNAPSHOT_PREFIX: visual-baselines
+    steps:
+      - checkout
+      - aws-cli/setup
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Install Playwright Chromium
+          command: npx playwright install --with-deps chromium
+      - run:
+          name: Download visual baseline snapshots from S3
+          command: |
+            mkdir -p tests/visual.spec.js-snapshots
+            aws s3 sync "s3://${S3_BUCKET}/${SNAPSHOT_PREFIX}" tests/visual.spec.js-snapshots --delete
+      - run:
+          name: Run visual regression tests
+          command: npm run test:visual
+      - slack/notify:
+          event: fail
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":x: Visual regression tests failed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                  }
+                }
+              ]
+            }
+      - slack/notify:
+          event: pass
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":white_check_mark: Visual regression tests passed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                  }
+                }
+              ]
+            }
+      - store_artifacts:
+          path: playwright-report
+          destination: playwright-report
+      - store_artifacts:
+          path: test-results
+          destination: test-results
 
 workflows:
   deploy_on_main:
     jobs:
-      - build_and_deploy:
+      - run_visual_regression_tests:
           filters:
             branches:
               only:
                 - main
+
+      # Normal path: visual regression tests pass, deploy automatically.
+      - build_and_deploy:
+          name: build_and_deploy_auto
+          requires:
+            - run_visual_regression_tests:
+                - success
+          filters:
+            branches:
+              only:
+                - main
+
+      # Failure path: visual regression tests fail, require human approval.
+      - approve_visual_regression_failure:
+          type: approval
+          requires:
+            - run_visual_regression_tests:
+                - failed
+          filters:
+            branches:
+              only:
+                - main
+
+      # After approval, deploy anyway.
+      - build_and_deploy:
+          name: build_and_deploy_after_approval
+          requires:
+            - approve_visual_regression_failure
+          filters:
+            branches:
+              only:
+                - main
+
+  daily_visual_regression:
+    triggers:
+      - schedule:
+          cron: "0 12 * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - run_visual_regression_tests:
+          context:
+            - slack-notification

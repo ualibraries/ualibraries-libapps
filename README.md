@@ -131,26 +131,67 @@ aws s3 sync dist s3://ualibraries-libapps-sandbox
 aws s3 sync images s3://ualibraries-libapps-sandbox/images
 ```
 
-## CircleCI deployment on main
+## Visual regression testing with Playwright
 
-This repository includes a CircleCI pipeline in `.circleci/config.yml`.
+Visual snapshot tests are configured in `tests/visual.spec.js`.
 
-- Trigger: every push to the `main` branch (including merge commits).
-- Steps: checkout -> install dependencies -> build -> deploy `dist/` and `images/` to S3.
-
-These environment variables need to be set in the CircleCI project settings:
-
-- `AWS_ACCESS_KEY_ID`
-- `AWS_SECRET_ACCESS_KEY`
-- `AWS_REGION` (defaults to `us-west-2` in the config)
-- `S3_BUCKET` (defaults to `ualibraries-libapps-sandbox` in the config)
-
-The deployment uses:
+Install Playwright browsers (first time only):
 
 ```bash
-aws s3 sync dist s3://$S3_BUCKET --delete
-aws s3 sync images s3://$S3_BUCKET/images --delete
+npx playwright install chromium
 ```
+
+Create or update baseline snapshots:
+
+```bash
+npm run test:visual:update
+```
+
+Run visual regression checks against existing snapshots:
+
+```bash
+npm run test:visual
+```
+
+Open the HTML report after a run:
+
+```bash
+npm run test:visual:report
+```
+
+## CircleCI workflows
+
+This repository includes two CircleCI workflows in `.circleci/config.yml`.
+
+### 1) deploy_on_main (push-triggered)
+
+The workflow starts with `run_visual_regression_tests`:
+
+- `npm ci`
+- install Playwright Chromium
+- download baseline snapshots from `s3://$S3_BUCKET/$SNAPSHOT_PREFIX`
+- run `npm run test:visual`
+- send Slack notification on pass/fail
+- store `playwright-report` and `test-results` as build artifacts
+
+After that, the workflow branches:
+
+- Pass path: `build_and_deploy_auto` runs automatically.
+- Fail path: `approve_visual_regression_failure` requires manual approval, then `build_and_deploy_after_approval` runs.
+
+The `build_and_deploy` job does:
+
+- `npm ci`
+- `npm run build`
+- deploy `dist/` and `images/` to S3
+- install Playwright Chromium
+- update visual snapshots (`npm run test:visual:update`)
+- upload updated snapshots to S3
+
+### 2) daily_visual_regression (scheduled)
+
+Runs daily at `0 12 * * *` (12:00 UTC).
+This workflow runs `run_visual_regression_tests` with the `slack-notification` context.
 
 ## Updating Vite and related dependencies
 

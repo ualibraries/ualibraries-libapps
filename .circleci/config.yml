@@ -103,7 +103,6 @@ workflows:
             branches:
               only:
                 - main
-                - story/17198_vr_ci
 
       # Normal path: visual regression tests pass, deploy automatically.
       - build_and_deploy:
@@ -115,7 +114,6 @@ workflows:
             branches:
               only:
                 - main
-                - story/17198_vr_ci
 
       # Failure path: visual regression tests fail, require human approval.
       - approve_visual_regression_failure:
@@ -127,7 +125,6 @@ workflows:
             branches:
               only:
                 - main
-                - story/17198_vr_ci
 
       # After approval, deploy anyway.
       - build_and_deploy:
@@ -138,7 +135,6 @@ workflows:
             branches:
               only:
                 - main
-                - story/17198_vr_ci
 
   daily_visual_regression:
     triggers:
@@ -147,7 +143,7 @@ workflows:
           filters:
             branches:
               only:
-                - story/17198_vr_ci
+                - main
     jobs:
       - run_visual_regression_tests:
           context:

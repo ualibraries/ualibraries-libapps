@@ -4,8 +4,24 @@ async function loadHTML(selector, url) {
   document.querySelector(selector).innerHTML = html;
 }
 
+function ensureLibchatScript() {
+  const libchat_src =
+    "https://ask.library.arizona.edu/load_chat.php?hash=07713bc057f66ebcdccd4dd1b4a2be3e";
+
+  // Remove existing libchat script if it exists
+  const existingScript = document.querySelector(`script[src="${libchat_src}"]`);
+  if (existingScript) {
+    existingScript.parentNode.removeChild(existingScript);
+  }
+
+  const libchat_script = document.createElement("script");
+  libchat_script.src = libchat_src;
+  document.body.appendChild(libchat_script);
+}
+
 async function init() {
   await loadHTML("#ualibraries-header", "/html/global_header.html");
+  ensureLibchatScript();
   await loadHTML("#ualibraries-footer", "/html/global_footer.html");
 }
 

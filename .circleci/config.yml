@@ -35,6 +35,34 @@ jobs:
       - run:
           name: Upload updated snapshots to S3
           command: aws s3 sync tests/visual.spec.js-snapshots "s3://${S3_BUCKET}/${SNAPSHOT_PREFIX}" --delete
+      - slack/notify:
+          event: fail
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":x: Deployment failed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                  }
+                }
+              ]
+            }
+      - slack/notify:
+          event: pass
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":white_check_mark: Deployment succeeded for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                  }
+                }
+              ]
+            }
 
   run_visual_regression_tests:
     docker:
@@ -99,6 +127,8 @@ workflows:
   deploy_on_main:
     jobs:
       - run_visual_regression_tests:
+          context:
+            - slack-notification
           filters:
             branches:
               only:
@@ -106,6 +136,8 @@ workflows:
 
       # Normal path: visual regression tests pass, deploy automatically.
       - build_and_deploy:
+          context:
+            - slack-notification
           name: build_and_deploy_auto
           requires:
             - run_visual_regression_tests:
@@ -128,6 +160,8 @@ workflows:
 
       # After approval, deploy anyway.
       - build_and_deploy:
+          context:
+            - slack-notification
           name: build_and_deploy_after_approval
           requires:
             - approve_visual_regression_failure

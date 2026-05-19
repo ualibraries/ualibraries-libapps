@@ -24,29 +24,49 @@ img {
   max-width: 100%;
 }
 
-/* Quick links dropdown */
-.btn-libapps-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
+/* Quick links */
+.btn-header,
+div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online,
+div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_offline {
+  color: #1e5288;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border: 0;
   border-radius: 0.375rem;
-  height: 36px;
-  width: 36px;
+  background-color: transparent;
 }
 
-.btn-libapps-header .close,
-.btn-libapps-header.show .material-symbols-rounded {
-  display: none;
+.btn-header:hover,
+div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online:hover,
+.btn-header-toggle.show {
+  color: #001c48;
+  background-color: #fff;
 }
 
-.btn-libapps-header.show {
-  background-color: #0c234b;
-}
+@media (max-width: 767.98px) {
+  .btn-header-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 36px;
+    width: 36px;
+  }
 
-.btn-libapps-header.show .close {
-  display: inline-block;
-  color: #fff;
+  .btn-header-toggle .close,
+  .btn-header-toggle.show .material-symbols-rounded,
+  .btn-header-toggle.dropdown-toggle::after {
+    display: none;
+  }
+
+  .btn-header-toggle.show {
+    background-color: #0c234b;
+  }
+
+  .btn-header-toggle.show .close {
+    display: inline-block;
+    color: #fff;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -82,6 +102,5 @@ img {
   display: flex;
   align-items: center;
 }
-
 
 /* --- End global styles --- */

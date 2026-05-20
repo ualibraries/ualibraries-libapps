@@ -1,6 +1,16 @@
 @import "./search_bar.css";
 @import "./az_item.css";
 
+
+
+/* -- Start root styles -- */
+/* Redefine card padding for use without the .card class. */
+:root {
+  --bs-card-spacer-x: 1rem;
+  --bs-card-spacer-y: 1rem;
+}
+/* -- End root styles -- */
+
 a {
   font-weight: 500;
 }
@@ -154,6 +164,7 @@ a.az-new-trial-popular-view-toggle[aria-expanded="false"]
 
   #best-bets-title {
     margin-top: 0;
+    margin-bottom: 0.5rem !important;
     color: var(--bs-black);
   }
 

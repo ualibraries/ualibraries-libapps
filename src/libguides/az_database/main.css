@@ -168,7 +168,7 @@ a.az-new-trial-popular-view-toggle[aria-expanded="false"]
     color: var(--bs-black);
   }
 
-  .az-item {
+  .az-item:first-of-type {
     border-top: 1px solid var(--bs-gray-400);
     padding-top: var(--bs-card-spacer-y);
   }

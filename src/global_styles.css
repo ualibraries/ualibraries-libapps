@@ -14,6 +14,12 @@ body {
   --bs-body-font-family: var(--bs-font-sans-serif);
 }
 
+/* Define reusable variables */
+:root {
+  --font-family-symbols: "Material Symbols Rounded";
+  --font-size-symbols: 1.25rem;
+}
+
 /* Hide Springshare's popover markup */
 #s-lib-popover-title,
 #s-lib-popover-content {

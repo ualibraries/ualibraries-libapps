@@ -11,8 +11,6 @@
 :root {
   --bs-card-spacer-y: 1rem;
   --bs-badge-font-size: 0.75rem;
-  --font-family-symbols: "Material Symbols Rounded";
-  --font-size-symbols: 1.25rem;
 }
 /* -- End root styles -- */
 

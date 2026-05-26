@@ -41,13 +41,13 @@
   background-color: var(--bs-dark);
 }
 
-.az-icons ul {
-  display: inline;
-  padding-left: 0;
-}
-
+.az-icons ul,
 .az-icons ul li {
   display: inline;
+}
+
+.az-icons ul {
+  padding-left: 0;
 }
 
 .s-lg-icon {
@@ -104,6 +104,7 @@
   border-color: var(--bs-azurite);
 }
 
+.az-item button.az-toggle.collapsible::after,
 .az-item button.az-toggle.collapsible.collapsed::after {
   border-top: 0.3em solid;
   border-bottom: 0;
@@ -113,11 +114,6 @@
   color: var(--bs-white);
   border: 2px solid var(--bs-blue);
   background-color: var(--bs-blue);
-}
-
-.az-item button.az-toggle.collapsible::after {
-  border-top: 0;
-  border-bottom: 0.3em solid;
 }
 
 .az-item .az-toggle .az-collapsible {

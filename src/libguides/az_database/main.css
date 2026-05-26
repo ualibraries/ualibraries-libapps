@@ -4,7 +4,7 @@
 
 
 /* -- Start root styles -- */
-/* Redefine card padding for use without the .card class. */
+/* Redefine component variables for use without the component's class. */
 :root {
   --bs-card-spacer-x: 1rem;
   --bs-card-spacer-y: 1rem;

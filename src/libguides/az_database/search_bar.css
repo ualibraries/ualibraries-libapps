@@ -127,11 +127,11 @@ button.s-lg-az-reset:hover {
 
   /* select arrow */
   &::after {
-    font-family: "Material Symbols Rounded";
+    font-family: var(--font-family-symbols);
     content: "keyboard_arrow_down"; 
     font-weight: normal;
     font-style: normal;
-    font-size: 1.25rem;
+    font-size: var(--font-size-symbols);
     display: inline-block;
     margin-left: auto;
   }
@@ -236,11 +236,11 @@ button.s-lg-az-reset:hover {
 .select2-container--bootstrap5
   .select2-dropdown
   .select2-results__option.select2-results__option--selected:after {
-  font-family: "Material Symbols Rounded";
+  font-family: var(--font-family-symbols);
   content: "check"; 
   font-weight: normal;
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: var(--font-size-symbols);
   display: inline-block;
   margin-left: auto;
 }

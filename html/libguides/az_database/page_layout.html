@@ -14,22 +14,31 @@
         </div>
       </div>
     </div>
-    <div class="container mt-3">
+    <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="alert alert-warning alert-dismissible fade show mb-3 p-0" role="alert">
+          <div class="alert alert-warning alert-dismissible fade show mt-3 p-0" role="alert">
             {{page_alert_section}}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
-          {{breadcrumbs_section}}
+          <div class="my-3">
+            {{breadcrumbs_section}}
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div id="s-lib-public-main-searchbar">
+  <div id="s-lib-public-main-searchbar" class="bg-gray-200">
     <div class="container">
-      {{search_bar_section}}
+      <div class="row">
+        <div class="col-12">
+          <h2 class="h4 mb-0">Find a database</h2>
+        </div>
+      </div>
+      <div class="py-4 pb-lg-5">
+        {{search_bar_section}}
+      </div>
     </div>
   </div>
 

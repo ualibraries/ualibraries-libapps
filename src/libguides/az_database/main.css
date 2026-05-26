@@ -1,6 +1,19 @@
 @import "./search_bar.css";
 @import "./az_item.css";
 
+
+
+/* -- Start root styles -- */
+/* 
+* Redefine component variables for use without the component's class. 
+* Variables may be referenced in other CSS files.
+*/
+:root {
+  --bs-card-spacer-y: 1rem;
+  --bs-badge-font-size: 0.75rem;
+}
+/* -- End root styles -- */
+
 a {
   font-weight: 500;
 }
@@ -21,7 +34,7 @@ a {
 #s-lib-public-header .az-alert-title {
   font-size: 1.25rem;
   font-weight: 500;
-  color: #212529;
+  color: var(--bs-dark);
   margin-bottom: 0.5rem !important;
 }
 
@@ -42,8 +55,8 @@ a {
 /* Base styling for all letter buttons */
 #s-lg-az-index .btn-group .btn {
   background-color: #fff;
-  border: 2px solid #378dbd;
-  color: #001c48;
+  border: 2px solid var(--bs-oasis);
+  color: var(--bs-midnight);
   text-decoration: none;
   min-width: 36px;
   height: 36px;
@@ -51,6 +64,15 @@ a {
   box-sizing: border-box;
   cursor: pointer;
   flex: 0 0 auto;
+
+  &:first-of-type {
+    border-top-left-radius: var(--bs-border-radius);
+    border-bottom-left-radius: var(--bs-border-radius);
+  }
+  &:last-of-type {
+    border-top-right-radius: var(--bs-border-radius);
+    border-bottom-right-radius: var(--bs-border-radius);
+  }
 }
 
 #s-lg-az-index .btn-group #s-lg-az-first-all {
@@ -63,7 +85,7 @@ a {
 }
 
 #s-lg-az-index .btn-group .btn:hover:not(:disabled) {
-  background-color: #e9ecef;
+  background-color: var(--bs-gray-200);
 }
 /* --- End index styles --- */
 
@@ -73,7 +95,7 @@ a {
 
 .s-lg-db-panel-title {
   padding-bottom: 0.25rem;
-  border-bottom: 2px solid #ced4da;
+  border-bottom: 2px solid var(--bs-gray-400);
 }
 
 #col1 {
@@ -118,7 +140,7 @@ a.az-new-trial-popular-view-toggle[aria-expanded="false"]
 
 #s-lg-az-subject-resources-body h2 {
   font-size: 1.25rem;
-  color: #494f58;
+  color: var(--bs-gray-700);
 }
 
 .az-subject-specialist-image {
@@ -140,3 +162,27 @@ a.az-new-trial-popular-view-toggle[aria-expanded="false"]
   display: none;
   font-size: 1.5em;
 }
+
+/* --- Start "recommended" styles --- */
+#s-lg-db-best-bets {
+  background-color: var(--bs-info-bg-subtle);
+  border-radius: var(--bs-border-radius);
+  border: none;
+  margin-top: 2rem;
+  
+  #best-bets-box {
+    padding: 1.5rem;
+  }
+
+  #best-bets-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem !important;
+    color: var(--bs-black);
+  }
+
+  .az-item:first-of-type {
+    border-top: 1px solid var(--bs-gray-400);
+    padding-top: var(--bs-card-spacer-y);
+  }
+}
+/* --- End "recommended" styles --- */

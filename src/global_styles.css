@@ -14,6 +14,12 @@ body {
   --bs-body-font-family: var(--bs-font-sans-serif);
 }
 
+/* Define reusable variables */
+:root {
+  --font-family-symbols: "Material Symbols Rounded";
+  --font-size-symbols: 1.25rem;
+}
+
 /* Hide Springshare's popover markup */
 #s-lib-popover-title,
 #s-lib-popover-content {
@@ -28,7 +34,7 @@ img {
 .btn-header,
 div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online,
 div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_offline {
-  color: #1e5288;
+  color: var(--bs-azurite);
   font-weight: 600;
   padding: 0.25rem 0.5rem;
   border: 0;
@@ -39,8 +45,8 @@ div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_offline {
 .btn-header:hover,
 div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online:hover,
 .btn-header-toggle.show {
-  color: #001c48;
-  background-color: #fff;
+  color: var(--bs-midnight);
+  background-color: var(--bs-white);
 }
 
 @media (max-width: 767.98px) {
@@ -60,12 +66,12 @@ div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online:hover,
   }
 
   .btn-header-toggle.show {
-    background-color: #0c234b;
+    background-color: var(--bs-blue);
   }
 
   .btn-header-toggle.show .close {
     display: inline-block;
-    color: #fff;
+    color: var(--bs-white);
   }
 }
 

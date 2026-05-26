@@ -1,7 +1,7 @@
 .az-item {
   margin-bottom: 1.3rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #ced4da;
+  border-bottom: 1px solid var(--bs-gray-400);
 }
 
 .az-item .mt-3 {
@@ -34,11 +34,11 @@
 }
 
 .s-lg-az-result-badge-new {
-  background-color: #155569;
+  background-color: var(--bs-river);
 }
 
 .s-lg-az-result-badge-popular {
-  background-color: #3f4254;
+  background-color: var(--bs-dark);
 }
 
 .az-icons ul {
@@ -65,7 +65,6 @@
 }
 
 .az-configured-fields-label {
-  color: #5e6278;
   margin-right: 0.5rem;
 }
 
@@ -94,15 +93,15 @@
 }
 
 .az-item button.az-toggle.collapsible.collapsed {
-  color: #0c234b;
-  border: 2px solid #0c234b;
-  background-color: #fff;
+  color: var(--bs-blue);
+  border: 2px solid var(--bs-blue);
+  background-color: var(--bs-white);
 }
 
 .az-item button.az-toggle.collapsible.collapsed:hover {
-  color: #fff;
-  background-color: #1e5288;
-  border-color: #1e5288;
+  color: var(--bs-white);
+  background-color: var(--bs-azurite);
+  border-color: var(--bs-azurite);
 }
 
 .az-item button.az-toggle.collapsible.collapsed::after {
@@ -111,9 +110,9 @@
 }
 
 .az-item button.az-toggle.collapsible {
-  color: #fff;
-  border: 2px solid #0c234b;
-  background-color: #0c234b;
+  color: var(--bs-white);
+  border: 2px solid var(--bs-blue);
+  background-color: var(--bs-blue);
 }
 
 .az-item button.az-toggle.collapsible::after {
@@ -128,5 +127,5 @@
 .az-entry-collapsible-box {
   margin-top: 1rem;
   padding: 1rem 1.25rem 0;
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--bs-gray-300);
 }

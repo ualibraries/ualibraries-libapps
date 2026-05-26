@@ -6,7 +6,6 @@
 /* -- Start root styles -- */
 /* Redefine component variables for use without the component's class. */
 :root {
-  --bs-card-spacer-x: 1rem;
   --bs-card-spacer-y: 1rem;
   --bs-badge-font-size: 0.75rem;
 }

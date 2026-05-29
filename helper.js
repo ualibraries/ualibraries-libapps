@@ -21,6 +21,9 @@ function ensureLibchatScript() {
 
 async function init() {
   await loadHTML("#ualibraries-header", "/html/global_header.html");
+  if (window.location.pathname === "/lg-guide") {
+    await loadHTML("#ualibraries-guide-header", "/html/libguides/guide_header.html");
+  }
   ensureLibchatScript();
   await loadHTML("#ualibraries-footer", "/html/global_footer.html");
 }

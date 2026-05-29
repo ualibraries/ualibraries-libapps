@@ -1,0 +1,32 @@
+/* Add .card styles to boxes */
+.s-lib-box {
+  border-radius: var(--bs-border-radius);
+  border-width: var(--bs-border-width);
+  border-style: var(--bs-border-style);
+  border-color: var(--bs-border-color);
+  padding: var(--bs-card-spacer-x) var(--bs-card-spacer-y);
+}
+
+/* Remove top-margin from box titles */
+.s-lib-box-title {
+  margin: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+/* Fix sidenav spacing */
+#ualibraries-guide-sidebar-nav {
+  .nav-item {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Add spacing between boxes in sidebar */
+#ualibraries-guide-sidebar-boxes {
+  .s-lg-col-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

@@ -4,7 +4,7 @@ import "./libguides/az_database/main.css";
 // Remove Springshare stylesheet references from page source
 document.addEventListener("DOMContentLoaded", () => {
   // List of filenames to be removed
-  const sheetsToRemove = ["lookfeel.css", "lg-public-bs5.min.css"];
+  const sheetsToRemove = ["lookfeel.css", "lg-public-bs5.min.css", "lg-public-bs535.min.css"];
 
   // Loop through sheetsToRemove, remove each from DOM
   sheetsToRemove.forEach((filename) => {
@@ -12,6 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
       `link[rel="stylesheet"][href*="${filename}"]`,
     );
     links.forEach((link) => link.parentNode.removeChild(link));
+  });
+
+  // Remove Springshare inline styles
+  document.querySelectorAll("style").forEach((style) => {
+    // Remove inline CSS that starts with a comment referencing this twig file
+    if (style.textContent.includes("bootstrap_tab_box_css.twig")) {
+      style.remove();
+    }
   });
 });
 

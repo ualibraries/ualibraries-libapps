@@ -20,6 +20,11 @@ body {
   --font-size-symbols: 1.25rem;
 }
 
+/* Ensure full height for sticky footer. */
+html {
+  height: 100% !important;
+}
+
 /* Hide Springshare's popover markup */
 #s-lib-popover-title,
 #s-lib-popover-content {

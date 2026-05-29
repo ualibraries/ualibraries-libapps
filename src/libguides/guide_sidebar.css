@@ -22,11 +22,22 @@
   }
 }
 
-/* Add spacing between boxes in sidebar */
 #ualibraries-guide-sidebar-boxes {
+  /* Add spacing between boxes in sidebar */
   .s-lg-col-boxes {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+  /* Reduce headings in sidebar */
+  .s-lib-box-title {
+    font-size: var(--font-size-h5);
+    border-bottom: none;
+    margin: 0;
+  }
+  /* Widen images in sidebar */
+  img {
+    width: 100% !important;
+    height: auto !important;
   }
 }

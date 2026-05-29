@@ -14,7 +14,12 @@ jobs:
       S3_BUCKET: ualibraries-libapps-prod
     steps:
       - checkout
-      - aws-cli/setup
+      - aws-cli/setup:
+          role_arn: "arn:aws:iam::822769020289:role/ualibraries-libapps-circleci-role-prod"
+          region: ${AWS_REGION}
+          profile_name: "OIDC-PROFILE"
+          role_session_name: ${CIRCLE_JOB}
+          session_duration: "1800"
       - run:
           name: Install dependencies
           command: npm ci
@@ -73,7 +78,12 @@ jobs:
       S3_BUCKET: ualibraries-libapps-sandbox
     steps:
       - checkout
-      - aws-cli/setup
+      - aws-cli/setup:
+          role_arn: "arn:aws:iam::478290680263:role/ualibraries-libapps-circleci-role-sandbox"
+          region: ${AWS_REGION}
+          profile_name: "OIDC-PROFILE"
+          role_session_name: ${CIRCLE_JOB}
+          session_duration: "1800"
       - run:
           name: Install dependencies
           command: npm ci

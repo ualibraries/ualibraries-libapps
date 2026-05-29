@@ -10,11 +10,18 @@ jobs:
       - image: cimg/node:24.14
     environment:
       AWS_REGION: us-west-2
-      S3_BUCKET: ualibraries-libapps-sandbox
       SNAPSHOT_PREFIX: visual-baselines
     steps:
       - checkout
       - aws-cli/setup
+      - run:
+          name: Set environment-specific S3 bucket
+          command: |
+            if [ "$CIRCLE_BRANCH" = "main" ]; then
+              echo 'export S3_BUCKET="ualibraries-libapps-prod"' >> "$BASH_ENV"
+            else
+              echo 'export S3_BUCKET="ualibraries-libapps-sandbox"' >> "$BASH_ENV"
+            fi
       - run:
           name: Install dependencies
           command: npm ci
@@ -169,6 +176,16 @@ workflows:
             branches:
               only:
                 - main
+
+      # Deploy to sandbox
+      - build_and_deploy:
+          name: build_and_deploy_sandbox
+          context:
+            - slack-notification
+          filters:
+            branches:
+              only:
+                - develop
 
   daily_visual_regression:
     triggers:

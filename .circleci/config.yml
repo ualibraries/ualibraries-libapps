@@ -220,6 +220,8 @@ workflows:
               only:
                 - main
 
+  deploy_to_sandbox:
+    jobs:
       # Deploy to sandbox
       - build_and_deploy_sandbox:
           name: build_and_deploy_sandbox

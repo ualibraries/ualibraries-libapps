@@ -14,10 +14,13 @@ body {
   --bs-body-font-family: var(--bs-font-sans-serif);
 }
 
-/* Define reusable variables */
+/* Define reusable variables & redefine AZBS component vaiables for use outside of their component classes */
 :root {
   --font-family-symbols: "Material Symbols Rounded";
   --font-size-symbols: 1.25rem;
+  --bs-card-spacer-x: 1rem;
+  --bs-card-spacer-y: 1rem;
+  --bs-badge-font-size: 0.75rem;
 }
 
 /* Ensure full height for sticky footer. */

@@ -1,0 +1,32 @@
+<body class="s-lg-guide-body">
+  <a href="#s-lib-public-main" class="visually-hidden-focusable btn btn-dark position-absolute start-50 translate-middle-x z-1 mt-1">Skip to main content</a>
+  {{ADMIN_CMD_BAR}}
+  {{public_header}}
+  <main class="d-flex flex-column h-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1>{{guide_title}}: {{page_title}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-9 order-2">
+          <div id="s-lib-public-main" class="s-lib-main">
+            {{content}}
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 order-1">
+          <ul class="nav nav-pills flex-column">
+            {{guide_nav}}
+          </ul>
+          {{side_nav_boxes}}
+          {{guide_subjects}}
+          {{guide_tags}}
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
+
+  {{public_footer}}
+</body>

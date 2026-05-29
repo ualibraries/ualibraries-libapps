@@ -11,17 +11,10 @@ jobs:
     environment:
       AWS_REGION: us-west-2
       SNAPSHOT_PREFIX: visual-baselines
+      S3_BUCKET: ualibraries-libapps-prod
     steps:
       - checkout
       - aws-cli/setup
-      - run:
-          name: Set environment-specific S3 bucket
-          command: |
-            if [ "$CIRCLE_BRANCH" = "main" ]; then
-              echo 'export S3_BUCKET="ualibraries-libapps-prod"' >> "$BASH_ENV"
-            else
-              echo 'export S3_BUCKET="ualibraries-libapps-sandbox"' >> "$BASH_ENV"
-            fi
       - run:
           name: Install dependencies
           command: npm ci
@@ -42,6 +35,56 @@ jobs:
       - run:
           name: Upload updated snapshots to S3
           command: aws s3 sync tests/visual.spec.js-snapshots "s3://${S3_BUCKET}/${SNAPSHOT_PREFIX}" --delete
+      - slack/notify:
+          event: fail
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":x: Deployment failed for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                  }
+                }
+              ]
+            }
+      - slack/notify:
+          event: pass
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": ":white_check_mark: Deployment succeeded for *${CIRCLE_PROJECT_REPONAME}*.\nBuild: ${CIRCLE_BUILD_URL}"
+                  }
+                }
+              ]
+            }
+
+  build_and_deploy_sandbox:
+    docker:
+      - image: cimg/node:24.14
+    environment:
+      AWS_REGION: us-west-2
+      SNAPSHOT_PREFIX: visual-baselines
+      S3_BUCKET: ualibraries-libapps-sandbox
+    steps:
+      - checkout
+      - aws-cli/setup
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - run:
+          name: Build project
+          command: npm run build
+      - run:
+          name: Deploy dist and images to S3
+          command: |
+            aws s3 sync dist "s3://${S3_BUCKET}"
+            aws s3 sync images "s3://${S3_BUCKET}/images" --delete
       - slack/notify:
           event: fail
           custom: |
@@ -178,7 +221,7 @@ workflows:
                 - main
 
       # Deploy to sandbox
-      - build_and_deploy:
+      - build_and_deploy_sandbox:
           name: build_and_deploy_sandbox
           context:
             - slack-notification

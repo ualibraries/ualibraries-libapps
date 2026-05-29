@@ -21,6 +21,7 @@ body {
   --bs-card-spacer-x: 1rem;
   --bs-card-spacer-y: 1rem;
   --bs-badge-font-size: 0.75rem;
+  --font-size-h5: 1.5rem;
 }
 
 /* Ensure full height for sticky footer. */

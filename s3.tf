@@ -94,7 +94,7 @@ data "aws_iam_policy_document" "circleci_oidc_assume_role_policy" {
 
     principals {
       type        = "Federated"
-      identifiers = ["rn:aws:iam::478290680263:oidc-provider/oidc.circleci.com/org/9248c872-6cae-4d68-84d7-b6ca1e6de3ed"]
+      identifiers = ["arn:aws:iam::478290680263:oidc-provider/oidc.circleci.com/org/9248c872-6cae-4d68-84d7-b6ca1e6de3ed"]
     }
 
     actions = ["sts:AssumeRoleWithWebIdentity"]

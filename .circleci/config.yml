@@ -79,7 +79,7 @@ jobs:
     steps:
       - checkout
       - aws-cli/setup:
-          role_arn: "arn:aws:iam::478290680263:role/ualibraries-libapps-circleci-role-sandbox"
+          role_arn: "arn:aws:iam::822769020289:role/ualibraries-libapps-circleci-role-dev"
           region: ${AWS_REGION}
           profile_name: "OIDC-PROFILE"
           role_session_name: ${CIRCLE_JOB}

@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket       = "ual-terraform-state"
+    bucket       = "ual-terraform-state-prod"
     key          = "ualibraries-libapps"
     use_lockfile = true
     region       = "us-west-2"
@@ -20,7 +20,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "public_bucket" {
-  bucket = "ualibraries-libapps-sandbox"
+  bucket = "ualibraries-libapps-${local.workspace}"
 }
 
 resource "aws_s3_bucket_public_access_block" "public_bucket" {
@@ -81,17 +81,44 @@ data "aws_iam_policy_document" "circleci_s3_policy_document" {
   }
 }
 
-resource "aws_iam_user" "circleci" {
-  name = "ualibraries-libapps-circleci"
-}
-
 resource "aws_iam_policy" "circleci_s3_policy" {
-  name        = "ualibraries-libapps-circleci-policy"
+  name        = "ualibraries-libapps-circleci-policy-${local.workspace}"
   description = "Allow CircleCI deployment access to the ualibraries libapps S3 bucket"
   policy      = data.aws_iam_policy_document.circleci_s3_policy_document.json
 }
 
-resource "aws_iam_user_policy_attachment" "circleci_s3_policy_attachment" {
-  user       = aws_iam_user.circleci.name
+
+data "aws_iam_policy_document" "circleci_oidc_assume_role_policy" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Federated"
+      identifiers = ["arn:aws:iam::822769020289:oidc-provider/oidc.circleci.com/org/9248c872-6cae-4d68-84d7-b6ca1e6de3ed"]
+    }
+
+    actions = ["sts:AssumeRoleWithWebIdentity"]
+
+    condition {
+      test     = "StringEquals"
+      variable = "oidc.circleci.com/org/9248c872-6cae-4d68-84d7-b6ca1e6de3ed:aud"
+      values   = ["9248c872-6cae-4d68-84d7-b6ca1e6de3ed"]
+    }
+  }
+}
+
+resource "aws_iam_role" "circleci" {
+  name               = "ualibraries-libapps-circleci-role-${local.workspace}"
+  assume_role_policy = data.aws_iam_policy_document.circleci_oidc_assume_role_policy.json
+}
+
+resource "aws_iam_policy_attachment" "circleci_opstest_push_images_to_ecr_policy_attachment" {
+  name       = "circleci-libapps-policy-attachment-${local.workspace}"
+  roles      = [aws_iam_role.circleci.name]
   policy_arn = aws_iam_policy.circleci_s3_policy.arn
+}
+
+
+locals {
+  workspace = terraform.workspace == "default" ? "prod" : terraform.workspace
 }

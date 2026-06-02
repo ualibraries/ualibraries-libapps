@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket       = "ual-terraform-state"
+    bucket       = "ual-terraform-state-prod"
     key          = "ualibraries-libapps"
     use_lockfile = true
     region       = "us-west-2"
@@ -82,7 +82,7 @@ data "aws_iam_policy_document" "circleci_s3_policy_document" {
 }
 
 resource "aws_iam_policy" "circleci_s3_policy" {
-  name        = "ualibraries-libapps-circleci-policy"
+  name        = "ualibraries-libapps-circleci-policy-${local.workspace}"
   description = "Allow CircleCI deployment access to the ualibraries libapps S3 bucket"
   policy      = data.aws_iam_policy_document.circleci_s3_policy_document.json
 }
@@ -94,7 +94,7 @@ data "aws_iam_policy_document" "circleci_oidc_assume_role_policy" {
 
     principals {
       type        = "Federated"
-      identifiers = ["arn:aws:iam::478290680263:oidc-provider/oidc.circleci.com/org/9248c872-6cae-4d68-84d7-b6ca1e6de3ed"]
+      identifiers = ["arn:aws:iam::822769020289:oidc-provider/oidc.circleci.com/org/9248c872-6cae-4d68-84d7-b6ca1e6de3ed"]
     }
 
     actions = ["sts:AssumeRoleWithWebIdentity"]

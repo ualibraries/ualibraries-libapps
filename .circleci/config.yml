@@ -75,7 +75,7 @@ jobs:
     environment:
       AWS_REGION: us-west-2
       SNAPSHOT_PREFIX: visual-baselines
-      S3_BUCKET: ualibraries-libapps-sandbox
+      S3_BUCKET: ualibraries-libapps-dev
     steps:
       - checkout
       - aws-cli/setup:

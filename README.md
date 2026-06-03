@@ -127,8 +127,8 @@ npm run deploy
 This runs `npm run build` and then:
 
 ```bash
-aws s3 sync dist s3://ualibraries-libapps-sandbox
-aws s3 sync images s3://ualibraries-libapps-sandbox/images
+aws s3 sync dist s3://ualibraries-libapps-dev
+aws s3 sync images s3://ualibraries-libapps-dev/images
 ```
 
 ## Visual regression testing with Playwright

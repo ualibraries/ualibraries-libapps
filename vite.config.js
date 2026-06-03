@@ -49,8 +49,9 @@ export default defineConfig({
               "#header_ua, #header_site, #footer_site, #ualibraries-banner, footer.footer",
             ).remove();
 
+            // Remove any existing LibApps resources to avoid conflicts with our local versions.
             $(
-              "link[href='https://ualibraries-libapps-sandbox.s3.us-west-2.amazonaws.com/ualibraries-libapps.css'], script[src='https://ualibraries-libapps-sandbox.s3.us-west-2.amazonaws.com/ualibraries-libapps.js']",
+              "link[href^='https://ualibraries-libapps-'][href$='.s3.us-west-2.amazonaws.com/ualibraries-libapps.css'],script[src^='https://ualibraries-libapps-'][src$='.s3.us-west-2.amazonaws.com/ualibraries-libapps.js']",
             ).remove();
 
             $("body").prepend(`<div id="ualibraries-header"></div>`);

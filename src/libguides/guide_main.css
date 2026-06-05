@@ -1,3 +1,27 @@
-.s-lg-col-boxes > div {
-  margin-top: 2rem;
+.s-lib-main .s-lg-col-boxes > div {
+  margin-bottom: 2rem;
+}
+
+.s-lib-main .s-lib-box {
+  border-color: var(--bs-gray-200);
+  padding: 1.5rem
+}
+
+.s-lib-main .s-lib-box-title {
+    border-color: var(--bs-gray-200);
+    color: var(--bs-black);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    font-family: var(--bs-font-sans-serif);
+    font-weight: 500;
+}
+
+.s-lib-main .s-lib-box-content {
+    color: var(--bs-ash);
+
+}
+
+.s-lib-main .s-lib-box-content p {
+    margin-bottom: 0;
 }

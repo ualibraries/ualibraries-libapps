@@ -44,3 +44,7 @@
       height: auto !important;
     }
   }
+
+  .s-lib-profile-name {
+    font-size: var(--font-size-h5);
+  }

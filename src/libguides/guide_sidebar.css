@@ -35,9 +35,9 @@
     border-bottom: none;
     margin: 0;
   }
-  /* Widen images in sidebar */
-  img {
-    width: 100% !important;
-    height: auto !important;
+  /* Widen profile images in sidebar */
+  .s-lib-profile-image {
+    margin: 0 calc(-1*var(--bs-card-spacer-x)) 1rem;
+
   }
 }

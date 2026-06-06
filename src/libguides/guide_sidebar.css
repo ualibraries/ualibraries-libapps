@@ -39,5 +39,8 @@
   .s-lib-profile-image {
     margin: 0 calc(-1*var(--bs-card-spacer-x)) 1rem;
 
+    img {
+      width: 100% !important;
+      height: auto !important;
+    }
   }
-}

@@ -16,12 +16,20 @@ body {
 
 /* Define reusable variables & redefine AZBS component vaiables for use outside of their component classes */
 :root {
+  /* Fonts */
   --font-family-symbols: "Material Symbols Rounded";
   --font-size-symbols: 1.25rem;
+  --font-size-h5: 1.5rem;
+
+  /* Cards */
   --bs-card-spacer-x: 1rem;
   --bs-card-spacer-y: 1rem;
+
+  /* Badges */
   --bs-badge-font-size: 0.75rem;
-  --font-size-h5: 1.5rem;
+  --bs-badge-padding-x: 0.65em;
+  --bs-badge-padding-y: 0.35em;
+  --bs-badge-font-weight: 700;
 }
 
 /* Ensure full height for sticky footer. */

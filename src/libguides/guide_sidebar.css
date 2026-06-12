@@ -48,3 +48,12 @@
   .s-lib-profile-name {
     font-size: var(--font-size-h5);
   }
+
+  /* Replicate red button */
+  .s-lib-profile-email {
+    margin: 1rem 0 1.5rem;
+    
+    .btn {
+      background-color: var(--bs-red);
+    }
+  }

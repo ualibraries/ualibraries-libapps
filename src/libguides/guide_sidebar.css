@@ -57,3 +57,56 @@
       background-color: var(--bs-red);
     }
   }
+
+  /* Style subjects as pill badges */
+  .ul-link-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .s-lib-profile-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2px;
+    row-gap: 6px;
+    /* Hide the commas */
+    font-size: 0;
+    border-width: var(--bs-border-width) 0 0 0;
+    border-style: var(--bs-border-style);
+    border-color: var(--bs-border-color);
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-left: calc(-1 * var(--bs-card-spacer-x));
+    margin-right: calc(-1 * var(--bs-card-spacer-x));
+    
+    strong {
+      font-size: var(--font-size-h5);
+      font-weight: 500;
+      display: block;
+      width: 100%;
+    }
+
+  }
+
+  .ul-link-list,
+  .s-lib-profile-subjects {
+
+    a {
+      display: inline-block;
+      color: var(--bs-black);
+      background-color: var(--bs-light);
+      padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+      border-radius: var(--bs-border-radius-pill);
+      font-size: var(--bs-badge-font-size);
+      font-weight: var(--bs-badge-font-weight);
+      line-height: 1rem;
+      text-align: center;
+      white-space: nowrap;
+
+      &:hover, &:focus {
+        background-color: #c1c9d0 !important;
+        text-decoration: none;
+      }
+    }
+  }
+}

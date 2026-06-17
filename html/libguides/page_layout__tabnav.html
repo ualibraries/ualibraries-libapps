@@ -1,0 +1,97 @@
+<body class="s-lg-guide-body d-flex flex-column h-100">
+    <a href="#s-lib-public-main" class="visually-hidden-focusable btn btn-dark position-absolute start-50 translate-middle-x z-1 mt-1">Skip to main content</a>
+    {{ADMIN_CMD_BAR}}
+    <div id="ualibraries-guide-header">
+      {{public_header}}
+      <div class="bg-blue py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <span class="h4 text-bg-blue">Placeholder header text</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="my-3">
+              {{breadcrumbs}}
+            </div>
+          </div>
+        </div>
+        <div class="float-end">
+          <div id="s-lg-guide-header-search">
+          {{guide_search}}
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <main class="flex-shrink-0 mb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="mt-0">{{guide_title}}: {{page_title}}</h1>
+            <div id="s-lg-guide-desc-container">
+              <span id="s-lg-guide-description">{{guide_description}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="s-lg-tabs-container" class="container pt-3">
+        <div id="s-lg-guide-tabs" class="tabs" role="navigation" aria-label="Guide Pages">
+          <ul class="nav nav-tabs split-button-nav">
+          {{guide_nav}}
+          </ul>
+        </div>
+      </div>
+      <div id="s-lg-guide-main" class="container s-lib-main s-lib-side-borders" tabindex="-1">
+      {{empty_page_sub_page_list}}
+      {{content}}
+      {{page_prev_next_links}}
+      </div>
+      <div id="s-lib-footer-public" class="s-lib-footer footer container s-lib-side-borders">
+        <div id="s-lg-guide-header-meta" class="pt-2 ps-3 clearfix">
+          <ul id="s-lg-guide-header-attributes" class="list-unstyled">
+            <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+            {{last_updated_display}}
+            </li>
+            <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+            {{guide_url_display}}
+            </li>
+            <li id="s-lg-guide-print-url">
+            {{print_url_display}}
+            </li>
+          </ul>
+          <div id="s-lib-footer-login-link" class="float-end pe-3">
+          {{login_url_display}}
+          </div>
+        </div>
+        <div class="pb-2 clearfix">
+          <div id="s-lg-guide-header-subjects" class="pt-2 ps-3 pe-3 float-start">
+          {{guide_subjects}}
+          </div>
+          <div id="s-lg-guide-header-tags" class="pt-2 ps-3 float-start">
+          {{guide_tags}}
+          </div>
+          <div id="s-lib-footer-support-link" class="float-end pe-3">
+          {{support_url_display}}
+          </div>
+        </div>
+      </div>
+      <!-- scroll_top.twig -->
+      <div id="s-lib-scroll-top">
+        <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
+        aria-label="Back to Top">
+          <span class="fa-stack fa-lg" aria-hidden="true">
+            <i class="fa fa-square-o fa-stack-2x"></i>
+            <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+          </span>
+        </a>
+      </div>
+      <!-- !scroll_top.twig -->
+    </main>
+    <div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
+    {{public_footer}}
+</body>

@@ -29,8 +29,8 @@ jobs:
       - run:
           name: Deploy dist and images to S3
           command: |
-            aws s3 sync dist "s3://${S3_BUCKET}"
-            aws s3 sync images "s3://${S3_BUCKET}/images" --delete
+            aws s3 sync dist "s3://${S3_BUCKET}" --metadata-directive REPLACE --cache-control "max-age=7200, must-revalidate"
+            aws s3 sync images "s3://${S3_BUCKET}/images" --delete --metadata-directive REPLACE --cache-control "max-age=7200, must-revalidate"
       - run:
           name: Install Playwright Chromium
           command: npx playwright install --with-deps chromium
@@ -93,8 +93,8 @@ jobs:
       - run:
           name: Deploy dist and images to S3
           command: |
-            aws s3 sync dist "s3://${S3_BUCKET}"
-            aws s3 sync images "s3://${S3_BUCKET}/images" --delete
+            aws s3 sync dist "s3://${S3_BUCKET}" --metadata-directive REPLACE --cache-control "no-cache, must-revalidate"
+            aws s3 sync images "s3://${S3_BUCKET}/images" --delete --metadata-directive REPLACE --cache-control "no-cache, must-revalidate"
       - slack/notify:
           event: fail
           custom: |

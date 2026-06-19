@@ -20,6 +20,22 @@
   .nav-item {
     margin-bottom: 0 !important;
   }
+  /* Replicate nav-pills nested styles. */
+  .nav-item .list-group-item {
+    padding: 0;
+
+    a {
+      display: block;
+      color: var(--bs-nav-link-color);
+      text-decoration: none;
+      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x) var(--bs-nav-link-padding-y) 25px;
+
+      &:hover, &:focus {
+        color: var(--bs-nav-link-hover-color);
+        background-color: var(--bs-gray-200);
+      }
+
+    }
 }
 
 #ualibraries-guide-sidebar-boxes {

@@ -45,6 +45,16 @@ export default defineConfig({
             let html = await fetchRes.text();
             const $ = cheerio.load(html);
 
+            // Find all hrefs that start with matchedProxy.target and replace them with local prefixes
+            $(`a[href^="${matchedProxy.target}"]`).each((_, el) => {
+              const href = $(el).attr("href");
+              const newHref = href.replace(
+                matchedProxy.target,
+                matchedProxy.prefix,
+              );
+              $(el).attr("href", newHref);
+            });
+
             $(
               "#header_ua, #header_site, #footer_site, #ualibraries-banner, footer.footer",
             ).remove();

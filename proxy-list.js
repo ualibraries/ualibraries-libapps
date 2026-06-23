@@ -16,6 +16,10 @@ export const proxyList = [
     target: "https://customertesting-ua.libguides.com/c.php?g=1531154",
   },
   {
+    prefix: "/lg-guide-lgbtq2",
+    target: "https://customertesting-ua.libguides.com/c.php?g=1538440",
+  },
+  {
     prefix: "/lg-guide-ai-researcher",
     target: "https://customertesting-ua.libguides.com/ai-researcher",
   },

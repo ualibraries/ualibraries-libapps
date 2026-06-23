@@ -20,13 +20,110 @@
   .nav-item {
     margin-bottom: 0 !important;
   }
+  /* Replicate nav-pills nested styles. */
+  .nav-item .list-group-item {
+    padding: 0;
+
+    a {
+      display: block;
+      color: var(--bs-nav-link-color);
+      text-decoration: none;
+      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x) var(--bs-nav-link-padding-y) 25px;
+
+      &:hover, &:focus {
+        color: var(--bs-nav-link-hover-color);
+        background-color: var(--bs-gray-200);
+      }
+
+    }
 }
 
-/* Add spacing between boxes in sidebar */
 #ualibraries-guide-sidebar-boxes {
+  /* Add spacing between boxes in sidebar */
   .s-lg-col-boxes {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+  /* Reduce headings in sidebar */
+  .s-lib-box-title {
+    font-size: var(--font-size-h5);
+    border-bottom: none;
+    margin: 0;
+  }
+  /* Widen profile images in sidebar */
+  .s-lib-profile-image {
+    margin: 0 calc(-1*var(--bs-card-spacer-x)) 1rem;
+
+    img {
+      width: 100% !important;
+      height: auto !important;
+      border-radius: 0;
+    }
+  }
+
+  .s-lib-profile-name {
+    font-size: var(--font-size-h5);
+  }
+
+  /* Replicate red button */
+  .s-lib-profile-email {
+    margin: 1rem 0 1.5rem;
+    
+    .btn {
+      background-color: var(--bs-red);
+    }
+  }
+
+  /* Style subjects as pill badges */
+  .ul-link-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .s-lib-profile-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2px;
+    row-gap: 6px;
+    /* Hide the commas */
+    font-size: 0;
+    border-width: var(--bs-border-width) 0 0 0;
+    border-style: var(--bs-border-style);
+    border-color: var(--bs-border-color);
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-left: calc(-1 * var(--bs-card-spacer-x));
+    margin-right: calc(-1 * var(--bs-card-spacer-x));
+    
+    strong {
+      font-size: var(--font-size-h5);
+      font-weight: 500;
+      display: block;
+      width: 100%;
+    }
+
+  }
+
+  .ul-link-list,
+  .s-lib-profile-subjects {
+
+    a {
+      display: inline-block;
+      color: var(--bs-black);
+      background-color: var(--bs-light);
+      padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+      border-radius: var(--bs-border-radius-pill);
+      font-size: var(--bs-badge-font-size);
+      font-weight: var(--bs-badge-font-weight);
+      line-height: 1rem;
+      text-align: center;
+      white-space: nowrap;
+
+      &:hover, &:focus {
+        background-color: #c1c9d0 !important;
+        text-decoration: none;
+      }
+    }
   }
 }

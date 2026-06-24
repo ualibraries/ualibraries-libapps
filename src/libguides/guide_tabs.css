@@ -1,0 +1,12 @@
+#s-lg-guide-tabs ul.nav {
+    display: flex;
+}
+
+ul.nav.nav-tabs {
+    gap: .5rem;
+}
+
+ul.nav.nav-tabs li.nav-item {
+    margin: 0 !important;
+}
+

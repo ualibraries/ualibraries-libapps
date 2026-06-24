@@ -13,7 +13,11 @@ export const proxyList = [
   },
   {
     prefix: "/lg-guide-tabs-learn-tutorials",
-    target: " https://customertesting-ua.libguides.com/learn-tutorials",
+    target: "https://customertesting-ua.libguides.com/c.php?g=1531154",
+  },
+  {
+    prefix: "/lg-guide-lgbtq2",
+    target: "https://customertesting-ua.libguides.com/c.php?g=1538440",
   },
   {
     prefix: "/lg-guide-ai-researcher",
@@ -33,6 +37,6 @@ export const proxyList = [
   },
   {
     prefix: "/lg-guide-black-history",
-    target: "https://customertesting-ua.libguides.com/c.php?g=1531144&p=11471114&bs5=1",
+    target: "https://customertesting-ua.libguides.com/c.php?g=1531144",
   },
 ];

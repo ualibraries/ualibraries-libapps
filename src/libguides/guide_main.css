@@ -27,3 +27,20 @@
     color: var(--bs-black);
   }
 }
+
+/* Book list */
+.s-lg-link-list {
+  list-style-type: none;
+  line-height: 1.2rem;
+  margin: 2rem;
+  padding-left: 0;
+}
+
+.s-lg-link-list li {
+  margin-bottom: 1rem;
+}
+
+img.s-lg-book-cover-img-0 {
+  margin: .25rem .5rem .5rem 0;
+  width: 90px;
+}

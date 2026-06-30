@@ -124,7 +124,7 @@ button.s-lg-az-reset:hover {
   /* select arrow */
   &::after {
     font-family: var(--font-family-symbols);
-    content: "keyboard_arrow_down"; 
+    content: "keyboard_arrow_down";
     font-weight: normal;
     font-style: normal;
     font-size: var(--font-size-symbols);
@@ -233,7 +233,7 @@ button.s-lg-az-reset:hover {
   .select2-dropdown
   .select2-results__option.select2-results__option--selected:after {
   font-family: var(--font-family-symbols);
-  content: "check"; 
+  content: "check";
   font-weight: normal;
   font-style: normal;
   font-size: var(--font-size-symbols);
@@ -248,6 +248,15 @@ button.s-lg-az-reset:hover {
 /* search result */
 #s-lg-az-result-count span.d-lg-inline {
   display: block !important;
+}
+
+#s-lg-az-result-count .az-filter-chip {
+  margin-bottom: 0.25rem;
+  margin-right: 0.5rem;
+}
+
+#s-lg-az-result-count .az-filter-chip:last-of-type {
+  margin-right: 0;
 }
 
 #s-lg-az-result-count .az-filter-chip a {

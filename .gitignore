@@ -6,3 +6,5 @@ tests/visual.spec.js-snapshots
 
 # Local .terraform directories
 **/.terraform/*
+
+images/.DS_Store

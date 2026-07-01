@@ -3,11 +3,12 @@
   {{ADMIN_CMD_BAR}}
   <div id="ualibraries-guide-header">
     {{public_header}}
-    <div class="bg-blue py-3">
+    <div class="text-bg-blue py-3">
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <span class="h4 text-bg-blue">Placeholder header text</span>
+            <p><span class="h4">Library guides</span></p>
+            <p class="mb-0">Guides by course, subject, or topic curated by University of Arizona librarians.</p>
           </div>
         </div>
       </div>
@@ -39,6 +40,9 @@
           <ul id="ualibraries-guide-sidebar-nav" class="nav nav-pills flex-column mb-5">
             {{guide_nav}}
           </ul>
+          <div id="ualibraries-guide-sidebar-profile" class="mb-3">
+            {{content_box_profile}}
+          </div>
           <div id="ualibraries-guide-sidebar-boxes">
             {{side_nav_boxes}}
             {{guide_subjects}}

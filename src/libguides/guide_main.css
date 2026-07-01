@@ -27,3 +27,28 @@
     color: var(--bs-black);
   }
 }
+
+/* Book list */
+.s-lg-book-title {
+  font-weight: 700;
+}
+
+.s-lg-link-list {
+  list-style-type: none;
+  line-height: 1.2rem;
+  margin-left: 1rem;
+  padding-left: 0;
+}
+
+.s-lg-link-list li {
+  margin-bottom: 1rem;
+}
+
+img.s-lg-book-cover-img-0 {
+  width: 90px;
+}
+
+.s-lg-book-cover-img-0, .s-lg-book-cover-img-1, .s-lg-book-cover-img-2 {
+  border: 0;
+  margin: 0 .6rem 0 0;
+}

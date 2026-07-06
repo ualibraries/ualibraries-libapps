@@ -1,8 +1,6 @@
 import "./global_styles.css";
 import "./libguides/az_database/main.css";
-import "./libguides/guide_sidebar.css";
-import "./libguides/guide_main.css";
-import "./libguides/guide_tabs.css";
+import "./libguides/global_guides.css";
 
 // Remove Springshare stylesheet references from page source
 document.addEventListener("DOMContentLoaded", () => {

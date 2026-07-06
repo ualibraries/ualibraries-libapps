@@ -1,3 +1,4 @@
+/* START box styles */
 /* Add .card styles to boxes */
 .s-lib-box {
   border-radius: var(--bs-border-radius);
@@ -6,21 +7,33 @@
   border-color: var(--bs-border-color);
   padding: var(--bs-card-spacer-x) var(--bs-card-spacer-y);
 }
+.s-lib-main .s-lg-col-boxes > div {
+  margin-bottom: 2rem;
+}
 
-/* Remove top-margin from box titles */
+/* Box title styling */
 .s-lib-box-title {
-  margin: 0;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
+  font-size: var(--font-size-h4);
+  margin: 0 0 1rem 0;
+  padding-bottom: 1rem;
   border-bottom: var(--bs-border-width) solid var(--bs-border-color);
 }
 
-/* Fix sidenav spacing */
+/* Remove spacing from final paragraphs */
+.s-lib-main .s-lib-box-content p:last-of-type {
+  margin-bottom: 0;
+}
+/* END box styles */
+
+
+
+/* START sidebar styles */
 #ualibraries-guide-sidebar-nav {
+  /* Fix spacing */
   .nav-item {
     margin-bottom: 0 !important;
   }
-  /* Replicate nav-pills nested styles. */
+  /* Replicate nav-pills nested styles */
   .nav-item .list-group-item {
     padding: 0;
 
@@ -39,8 +52,9 @@
   }
 }
 
-#ualibraries-guide-sidebar-boxes {
-  /* Add spacing between boxes in sidebar */
+#ualibraries-guide-sidebar-boxes,
+#ualibraries-guide-sidebar-profile {
+  /* Add spacing between boxes */
   .s-lg-col-boxes {
     display: flex;
     flex-direction: column;
@@ -70,7 +84,7 @@
   /* Replicate red button */
   .s-lib-profile-email {
     margin: 1rem 0 1.5rem;
-
+    
     .btn {
       background-color: var(--bs-red);
     }
@@ -81,12 +95,7 @@
     list-style: none;
     padding: 0;
   }
-
   .s-lib-profile-subjects {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 2px;
-    row-gap: 6px;
     /* Hide the commas */
     font-size: 0;
     border-width: var(--bs-border-width) 0 0 0;
@@ -96,7 +105,7 @@
     padding: 1rem;
     margin-left: calc(-1 * var(--bs-card-spacer-x));
     margin-right: calc(-1 * var(--bs-card-spacer-x));
-
+    
     strong {
       font-size: var(--font-size-h5);
       font-weight: 500;
@@ -108,6 +117,10 @@
 
   .ul-link-list,
   .s-lib-profile-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 2px;
+    row-gap: 6px;
 
     a {
       display: inline-block;
@@ -128,3 +141,54 @@
     }
   }
 }
+/* END sidebar styles */
+
+
+/* START tab nav styles */
+#s-lg-guide-tabs {
+  ul.nav {
+    display: flex;
+  }
+  ul.nav.nav-tabs {
+    gap: .5rem;
+  }
+  ul.nav.nav-tabs li.nav-item {
+    margin: 0 !important;
+  }
+  div.tab-content {
+    padding: .7rem;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+}
+/* END tab nav styles */
+
+
+/* START widget styles */
+/* START book list widget */
+.s-lg-book-title {
+  font-weight: 700;
+}
+
+.s-lg-link-list {
+  list-style-type: none;
+  line-height: 1.2rem;
+  margin-left: 1rem;
+  padding-left: 0;
+}
+
+.s-lg-link-list li {
+  margin-bottom: 1rem;
+}
+
+img.s-lg-book-cover-img-0 {
+  width: 90px;
+}
+
+.s-lg-book-cover-img-0, .s-lg-book-cover-img-1, .s-lg-book-cover-img-2 {
+  border: 0;
+  margin: 0 .6rem 0 0;
+}
+/* END book list widget */
+/* END widget styles */

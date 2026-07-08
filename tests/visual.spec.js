@@ -16,7 +16,7 @@ test("A-Z Databases filter", async ({ page }) => {
   await page.setViewportSize({ width: viewport.width, height: 1800 });
 
   await page.goto(
-    "https://libguides.library.arizona.edu/az/databases?s=260432&t=64874",
+    "https://libguides.library.arizona.edu/az/databases?s=159828&t=39061",
   );
 
   await page.waitForLoadState("networkidle");

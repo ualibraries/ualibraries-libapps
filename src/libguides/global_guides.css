@@ -155,12 +155,13 @@
   ul.nav.nav-tabs li.nav-item {
     margin: 0 !important;
   }
-  div.tab-content {
-    padding: .7rem;
-    border-bottom: 1px solid #ddd;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-  }
+}
+
+div.tab-content {
+  padding: .7rem;
+  border-bottom: 1px solid var(--bs-light-border-subtle);
+  border-left: 1px solid var(--bs-light-border-subtle);
+  border-right: 1px solid var(--bs-light-border-subtle);
 }
 /* END tab nav styles */
 

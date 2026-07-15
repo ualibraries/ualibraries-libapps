@@ -1,13 +1,11 @@
 @import "./search_bar.css";
 @import "./az_item.css";
 
-
-
 /* -- Start root styles -- */
-/* 
-* Redefine component variables for use without the component's class. 
-* Variables may be referenced in other CSS files.
-*/
+/*
+ * Redefine component variables for use without the component's class.
+ * Variables may be referenced in other CSS files.
+ */
 :root {
   --bs-card-spacer-y: 1rem;
   --bs-badge-font-size: 0.75rem;
@@ -155,21 +153,13 @@ a.az-new-trial-popular-view-toggle[aria-expanded="false"]
   max-height: 1.5rem;
 }
 
-#s-lib-scroll-top {
-  position: fixed;
-  bottom: 50%;
-  right: 5px;
-  display: none;
-  font-size: 1.5em;
-}
-
 /* --- Start "recommended" styles --- */
 #s-lg-db-best-bets {
   background-color: var(--bs-info-bg-subtle);
   border-radius: var(--bs-border-radius);
   border: none;
   margin-top: 2rem;
-  
+
   #best-bets-box {
     padding: 1.5rem;
   }

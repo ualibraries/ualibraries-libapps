@@ -52,7 +52,7 @@
 }
 
 #ualibraries-guide-sidebar-boxes,
-#ualibraries-guide-sidebar-profile {
+.s-lib-profile-container {
   /* Add spacing between boxes */
   .s-lg-col-boxes {
     display: flex;

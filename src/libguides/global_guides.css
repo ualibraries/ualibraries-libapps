@@ -25,8 +25,6 @@
 }
 /* END box styles */
 
-
-
 /* START sidebar styles */
 #ualibraries-guide-sidebar-nav {
   /* Fix spacing */
@@ -41,13 +39,14 @@
       display: block;
       color: var(--bs-nav-link-color);
       text-decoration: none;
-      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x) var(--bs-nav-link-padding-y) 25px;
+      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x)
+        var(--bs-nav-link-padding-y) 25px;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: var(--bs-nav-link-hover-color);
         background-color: var(--bs-gray-200);
       }
-
     }
   }
 }
@@ -68,7 +67,7 @@
   }
   /* Widen profile images in sidebar */
   .s-lib-profile-image {
-    margin: 0 calc(-1*var(--bs-card-spacer-x)) 1rem;
+    margin: 0 calc(-1 * var(--bs-card-spacer-x)) 1rem;
 
     img {
       width: 100% !important;
@@ -84,7 +83,7 @@
   /* Replicate red button */
   .s-lib-profile-email {
     margin: 1rem 0 1.5rem;
-    
+
     .btn {
       background-color: var(--bs-red);
     }
@@ -105,14 +104,13 @@
     padding: 1rem;
     margin-left: calc(-1 * var(--bs-card-spacer-x));
     margin-right: calc(-1 * var(--bs-card-spacer-x));
-    
+
     strong {
       font-size: var(--font-size-h5);
       font-weight: 500;
       display: block;
       width: 100%;
     }
-
   }
 
   .ul-link-list,
@@ -134,7 +132,8 @@
       text-align: center;
       white-space: nowrap;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background-color: #c1c9d0 !important;
         text-decoration: none;
       }
@@ -143,14 +142,13 @@
 }
 /* END sidebar styles */
 
-
 /* START tab nav styles */
 #s-lg-guide-tabs {
   ul.nav {
     display: flex;
   }
   ul.nav.nav-tabs {
-    gap: .5rem;
+    gap: 0.5rem;
   }
   ul.nav.nav-tabs li.nav-item {
     margin: 0 !important;
@@ -158,13 +156,12 @@
 }
 
 div.tab-content {
-  padding: .7rem;
+  padding: 0.7rem;
   border-bottom: 1px solid var(--bs-light-border-subtle);
   border-left: 1px solid var(--bs-light-border-subtle);
   border-right: 1px solid var(--bs-light-border-subtle);
 }
 /* END tab nav styles */
-
 
 /* START widget styles */
 /* START book list widget */
@@ -187,9 +184,11 @@ img.s-lg-book-cover-img-0 {
   width: 90px;
 }
 
-.s-lg-book-cover-img-0, .s-lg-book-cover-img-1, .s-lg-book-cover-img-2 {
+.s-lg-book-cover-img-0,
+.s-lg-book-cover-img-1,
+.s-lg-book-cover-img-2 {
   border: 0;
-  margin: 0 .6rem 0 0;
+  margin: 0 0.6rem 0 0;
 }
 /* END book list widget */
 /* END widget styles */

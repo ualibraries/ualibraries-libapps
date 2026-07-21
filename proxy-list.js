@@ -39,4 +39,9 @@ export const proxyList = [
     prefix: "/lg-guide-black-history",
     target: "https://customertesting-ua.libguides.com/c.php?g=1531144",
   },
+  {
+    prefix: "/lg-guide-art-prod",
+    target:
+      "https://libguides.library.arizona.edu/art/get-started?preview=585f70242fed9051582515586b410bfa&bs5=1",
+  },
 ];

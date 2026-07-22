@@ -43,4 +43,8 @@ export const proxyList = [
     prefix: "/lg-guide-art-prod",
     target: "https://libguides.library.arizona.edu/art?bs5=1",
   },
+  {
+    prefix: "/lg-guide-spring-share-redesign",
+    target: "https://libguides.library.arizona.edu/c.php?g=1541673&p=11557738&preview=2c7758ff1a56b116e98a04a08cfe54f3&bs5=1"
+  },
 ];

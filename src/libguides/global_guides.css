@@ -23,6 +23,30 @@
 .s-lib-main .s-lib-box-content p:last-of-type {
   margin-bottom: 0;
 }
+
+/* Search FAQs */
+.s-lib-box:has(.s-la-content-search) {
+  background-color: var(--bs-cool-gray);
+  border: 0;
+
+  .s-la-widget-embed {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .s-la-content-search .input-group {
+    .s-la-content-search-query {
+      border: 1px solid var(--bs-border-color);
+      border-radius: var(--bs-border-radius);
+    }
+    .s-la-searchform-button {
+      margin-left: 10px;
+      border: 0;
+      border-radius: var(--bs-btn-border-radius);
+      background-color: var(--bs-blue);
+    }
+  }
+}
 /* END box styles */
 
 /* START sidebar styles */

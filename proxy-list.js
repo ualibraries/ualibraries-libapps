@@ -9,7 +9,7 @@ export const proxyList = [
   },
   {
     prefix: "/lg-home",
-    target: "https://libguides.library.arizona.edu/library-guides",
+    target: "https://libguides.library.arizona.edu/library-guides?bs5=1",
   },
   {
     prefix: "/lg-guide-tabs-learn-tutorials",

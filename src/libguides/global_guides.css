@@ -13,8 +13,12 @@
 
 /* Box content styling */
 
-div.s-lib-box-content > div {
-  margin: 2rem 0;
+/* Add bottom margin to polls, RSS feeds, media gallery, and widgets */
+.s-lg-poll-outer,
+.s-lg-rss,
+.slick-slider,
+.s-lg-widget {
+  margin-bottom: 1rem;
 }
 
 /* END box content styling */

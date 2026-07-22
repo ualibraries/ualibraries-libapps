@@ -11,6 +11,18 @@
   margin-bottom: 2rem;
 }
 
+/* Box content styling */
+
+/* Add bottom margin to polls, RSS feeds, media gallery, and widgets */
+.s-lg-poll-outer,
+.s-lg-rss,
+.slick-slider,
+.s-lg-widget {
+  margin-bottom: 1rem;
+}
+
+/* END box content styling */
+
 /* Box title styling */
 .s-lib-box-title {
   font-size: var(--font-size-h4);

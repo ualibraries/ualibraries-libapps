@@ -24,6 +24,28 @@
   margin-bottom: 0;
 }
 
+/* Search widget */
+.s-lg-embedded-search-widget {
+  form {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .s-lg-widget-search {
+    flex: 1;
+  }
+
+  .s-lg-form-control {
+    width: 100% !important;
+    height: 42px !important;
+  }
+
+  .s-lg-btn-api-drop {
+    color: var(--bs-white) !important;
+    background-color: var(--bs-blue);
+  }
+}
+
 /* Search FAQs */
 .s-lib-box:has(.s-la-content-search) {
   background-color: var(--bs-cool-gray);

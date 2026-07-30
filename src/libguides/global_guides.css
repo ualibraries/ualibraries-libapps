@@ -38,6 +38,7 @@
 
 /* Subjects and Tags box */
 #ualibraries-guide-subjects-tags {
+  margin-bottom: 2rem;
   padding: 1.25rem 1.25rem 0.25rem;
   background-color: var(--bs-secondary-bg);
   border-radius: var(--bs-border-radius);
@@ -75,6 +76,9 @@
       }
     }
   }
+}
+#ualibraries-guide-subjects-tags:not(:has(*)) {
+  display: none;
 }
 
 /* Search widget */

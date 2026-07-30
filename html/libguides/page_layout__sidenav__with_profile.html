@@ -1,5 +1,7 @@
 <body class="s-lg-guide-body d-flex flex-column h-100">
-  <a href="#s-lib-public-main" class="visually-hidden-focusable btn btn-dark position-absolute start-50 translate-middle-x z-1 mt-1">Skip to main content</a>
+  <a href="#s-lib-public-main"
+    class="visually-hidden-focusable btn btn-dark position-absolute start-50 translate-middle-x z-1 mt-1">
+    Skip to main content</a>
   {{ADMIN_CMD_BAR}}
   <div id="ualibraries-guide-header">
     {{public_header}}
@@ -13,11 +15,14 @@
       </div>
     </div>
   </div>
-  <main class="flex-shrink-0 mb-5">
+  <main class="flex-shrink-0 mb-3">
     <div class="container">
       <div class="row">
         <div class="col-12">
           <h1 class="mt-0">{{guide_title}}: {{page_title}}</h1>
+          <div id="s-lg-guide-desc-container">
+            <span id="s-lg-guide-description">{{guide_description}}</span>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -29,6 +34,7 @@
             {{guide_subjects}}
             {{guide_tags}}
           </div>
+          {{page_prev_next_links}}
         </div>
         <div class="col-12 col-lg-3 order-1">
           <ul id="ualibraries-guide-sidebar-nav" class="nav nav-pills flex-column mb-5">
@@ -44,7 +50,40 @@
       </div>
     </div>
   </main>
-  <div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>
+
+  <div id="s-lib-footer-public" class="s-lib-footer footer container s-lib-side-borders">
+    <div id="s-lg-guide-header-meta" class="pt-2 ps-3 clearfix">
+      <ul id="s-lg-guide-header-attributes">
+        <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+          {{last_updated_display}}
+        </li>
+        <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+          {{guide_url_display}}
+        </li>
+        <li id="s-lg-guide-print-url">
+          {{print_url_display}}
+        </li>
+      </ul>
+      <div id="s-lib-footer-login-link" class="float-end pe-3">
+        {{login_url_display}}
+      </div>
+    </div>
+  </div>
+
+  <!-- scroll_top.twig -->
+  <div id="s-lib-scroll-top">
+    <a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top" aria-label="Back to Top">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
+      </span>
+    </a>
+  </div>
+  <!-- !scroll_top.twig -->
+
+  <div id="s-lib-alert" title="">
+    <div id="s-lib-alert-content"></div>
+  </div>
 
   {{public_footer}}
 </body>

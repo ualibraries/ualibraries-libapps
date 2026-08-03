@@ -81,6 +81,22 @@
   display: none;
 }
 
+/* Google search */
+div[id^="google_search_box"] {
+  .s-lg-google-search-field {
+    height: 42px;
+  }
+
+  input[value="Search"] {
+    --bs-btn-padding-x: 1.25rem;
+    --bs-btn-padding-y: 0.5rem;
+    --bs-btn-font-size: 1rem;
+
+    color: var(--bs-white);
+    background-color: var(--bs-blue);
+  }
+}
+
 /* Search widget */
 .s-lg-embedded-search-widget {
   form {

@@ -36,6 +36,32 @@
   margin-bottom: 0;
 }
 
+/* Guide list */
+.s-lib-box .s-lg-system-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--bs-light-border-subtle);
+
+    a {
+      font-size: 1.125rem;
+    }
+  }
+
+  .s-lg-guide-info-account a {
+    color: var(--bs-secondary);
+    font-size: 1rem;
+  }
+
+  .s-lg-guide-info-updated,
+  .s-lg-guide-info-views {
+    display: none;
+  }
+}
+
 /* Subjects and Tags box */
 #ualibraries-guide-subjects-tags {
   margin-bottom: 2rem;

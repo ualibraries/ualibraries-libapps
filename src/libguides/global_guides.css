@@ -36,6 +36,89 @@
   margin-bottom: 0;
 }
 
+/* Database/Book list */
+.s-lg-link-list {
+  list-style-type: none;
+  margin-left: 1rem;
+  padding-left: 0;
+
+  li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--bs-border-color);
+  }
+
+  span > a {
+    font-size: 1.125rem;
+  }
+
+  .s-lg-link-desc,
+  .s-lg-database-desc,
+  .s-lg-book-desc {
+    margin-top: 0.5rem;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .s-lg-label-more,
+  .s-lg-label-less {
+    margin-top: 0.75rem;
+    padding: 0.25rem 1.25rem;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    border-radius: 3rem;
+  }
+
+  .s-lg-label-more {
+    color: var(--bs-blue);
+    border: 2px solid var(--bs-blue);
+    background-color: var(--bs-white);
+  }
+
+  .s-lg-label-more:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-azurite);
+    border-color: var(--bs-azurite);
+  }
+
+  .s-lg-label-less {
+    color: var(--bs-white);
+    border: 2px solid var(--bs-blue);
+    background-color: var(--bs-blue);
+  }
+
+  .s-lg-content-more-info {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--bs-border-color);
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Book list widget */
+  .s-lg-book-title {
+    font-weight: 700;
+  }
+
+  img.s-lg-book-cover-img-0 {
+    width: 90px;
+  }
+
+  .s-lg-book-cover-img-0,
+  .s-lg-book-cover-img-1,
+  .s-lg-book-cover-img-2 {
+    border: 0;
+    margin: 0 0.6rem 0 0;
+  }
+}
+
 /* Subjects and Tags box */
 #ualibraries-guide-subjects-tags {
   margin-bottom: 2rem;
@@ -283,31 +366,4 @@ div.tab-content {
 /* END tab nav styles */
 
 /* START widget styles */
-/* START book list widget */
-.s-lg-book-title {
-  font-weight: 700;
-}
-
-.s-lg-link-list {
-  list-style-type: none;
-  line-height: 1.2rem;
-  margin-left: 1rem;
-  padding-left: 0;
-}
-
-.s-lg-link-list li {
-  margin-bottom: 1rem;
-}
-
-img.s-lg-book-cover-img-0 {
-  width: 90px;
-}
-
-.s-lg-book-cover-img-0,
-.s-lg-book-cover-img-1,
-.s-lg-book-cover-img-2 {
-  border: 0;
-  margin: 0 0.6rem 0 0;
-}
-/* END book list widget */
 /* END widget styles */

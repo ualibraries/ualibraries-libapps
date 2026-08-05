@@ -47,6 +47,11 @@ html {
   display: none;
 }
 
+/* Hide external link icon */
+.fa-external-link {
+  display: none;
+}
+
 img {
   max-width: 100%;
 }

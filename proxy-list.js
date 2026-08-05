@@ -48,6 +48,10 @@ export const proxyList = [
     target: "https://libguides.library.arizona.edu/faq?bs5=1",
   },
   {
+    prefix: "/lg-guide-lar-prod",
+    target: "https://libguides.library.arizona.edu/lar496a?bs5=1",
+  },
+  {
     prefix: "/lg-guide-spring-share-redesign",
     target: "https://libguides.library.arizona.edu/design-reference?bs5=1",
   },

@@ -11,6 +11,11 @@
   margin-bottom: 2rem;
 }
 
+/* Profile image */
+.s-lib-main .s-lib-profile-container img {
+  max-width: 33.33%;
+}
+
 /* Box title styling */
 .s-lib-box-title {
   font-size: var(--font-size-h4);

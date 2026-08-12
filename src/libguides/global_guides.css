@@ -23,6 +23,11 @@
 
 /* END box content styling */
 
+/* Profile image */
+.s-lib-main .s-lib-profile-container img {
+  max-width: 33.33%;
+}
+
 /* Box title styling */
 .s-lib-box-title {
   font-size: var(--font-size-h4);
@@ -256,7 +261,7 @@ div[id^="google_search_box"] {
 }
 
 #ualibraries-guide-sidebar-boxes,
-#ualibraries-guide-sidebar-profile {
+.s-lib-profile-container {
   /* Add spacing between boxes */
   .s-lg-col-boxes {
     display: flex;

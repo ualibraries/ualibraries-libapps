@@ -385,4 +385,32 @@ div.tab-content {
     margin-top: 1rem;
   }
 }
+
+.s-lib-box {
+  /* A-Z List */
+  span[class^="s-lg-az-result-badge"] {
+    border-radius: var(--bs-border-radius-pill);
+    margin-left: 0.25rem;
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    font-size: var(--bs-badge-font-size);
+    font-weight: var(--bs-badge-font-weight);
+    color: var(--bs-white);
+  }
+
+  .s-lg-az-result-badge-featured {
+    background-color: var(--bs-leaf);
+  }
+
+  .s-lg-icons {
+    display: inline-flex;
+    margin-left: 0.5rem;
+
+    ul {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0;
+      list-style: none;
+    }
+  }
+}
 /* END widget styles */

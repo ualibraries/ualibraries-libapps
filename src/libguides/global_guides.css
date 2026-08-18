@@ -373,4 +373,22 @@ div.tab-content {
 /* END tab nav styles */
 
 /* START widget styles */
+.s-lib-box .s-lg-widget {
+  form[id^="s-lg-frm-az-widget"],
+  form[id^="s-lg-frm-guide-widget"],
+  form[id^="s-lg-frm-tag-widget"] {
+    display: flex;
+    gap: 0.5rem;
+
+    .s-lg-btn-api-drop {
+      color: var(--bs-white);
+      background-color: var(--bs-blue);
+      border-color: var(--bs-blue);
+    }
+  }
+
+  .s-lg-widget-list-more-results {
+    margin-top: 1rem;
+  }
+}
 /* END widget styles */

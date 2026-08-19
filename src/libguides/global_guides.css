@@ -376,6 +376,7 @@ div.tab-content {
 .s-lib-box .s-lg-widget {
   form[id^="s-lg-frm-az-widget"],
   form[id^="s-lg-frm-guide-widget"],
+  form[id^="s-lg-frm-subject-widget"],
   form[id^="s-lg-frm-tag-widget"] {
     display: flex;
     gap: 0.5rem;

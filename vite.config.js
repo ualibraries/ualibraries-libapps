@@ -26,6 +26,10 @@ export default defineConfig({
         target: "https://customertesting-ua.libguides.com",
         changeOrigin: true,
       },
+      "/sb_process.php": {
+        target: "https://customertesting-ua.libguides.com",
+        changeOrigin: true,
+      },
     },
   },
   plugins: [

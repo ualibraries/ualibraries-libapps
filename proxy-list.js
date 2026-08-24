@@ -12,6 +12,11 @@ export const proxyList = [
     target: "https://libguides.library.arizona.edu/library-guides?bs5=1",
   },
   {
+    prefix: "/lg-subject-art",
+    target:
+      "https://customertesting-ua.libguides.com/sb.php?subject_id=261473&bs5=1",
+  },
+  {
     prefix: "/lg-guide-tabs-learn-tutorials",
     target: "https://customertesting-ua.libguides.com/c.php?g=1531154",
   },

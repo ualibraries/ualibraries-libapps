@@ -13,8 +13,7 @@ export const proxyList = [
   },
   {
     prefix: "/lg-subject-art",
-    target:
-      "https://customertesting-ua.libguides.com/sb.php?subject_id=261473&bs5=1",
+    target: "https://customertesting-ua.libguides.com/sb.php?subject_id=261473",
   },
   {
     prefix: "/lg-guide-tabs-learn-tutorials",

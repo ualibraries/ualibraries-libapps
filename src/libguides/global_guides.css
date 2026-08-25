@@ -461,14 +461,6 @@ div.tab-content {
 }
 
 #s-lg-sb-cols {
-  #col1 {
-    width: 100%;
-  }
-
-  #col2 {
-    width: 100%;
-  }
-
   .tab-content {
     padding: 0;
     border: 0;
@@ -512,6 +504,31 @@ div.tab-content {
   .s-lg-db-panel-title {
     border-bottom: 1px solid var(--bs-border-color) !important;
     padding-bottom: 0.75rem;
+  }
+}
+
+#s-lib-public-side .s-lib-public-side-header h2 {
+  margin: 0;
+  font-size: var(--font-size-h4);
+}
+
+#s-lg-public-side-search {
+  .s-lib-public-side-header h2 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--bs-border-color);
+  }
+
+  form {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  button {
+    color: var(--bs-white);
+    background-color: var(--bs-blue);
+    border-color: var(--bs-blue);
   }
 }
 

@@ -27,7 +27,11 @@ export default defineConfig({
         changeOrigin: true,
       },
       "/sb_process.php": {
-        target: "https://customertesting-ua.libguides.com",
+        target: "https://libguides.library.arizona.edu",
+        changeOrigin: true,
+      },
+      "/index_process.php": {
+        target: "https://libguides.library.arizona.edu",
         changeOrigin: true,
       },
     },

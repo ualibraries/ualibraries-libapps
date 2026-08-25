@@ -16,6 +16,10 @@ export const proxyList = [
     target: "https://customertesting-ua.libguides.com/sb.php?subject_id=261473",
   },
   {
+    prefix: "/lg-subject-asian",
+    target: "https://libguides.library.arizona.edu/asian_studies?bs5=1",
+  },
+  {
     prefix: "/lg-guide-tabs-learn-tutorials",
     target: "https://customertesting-ua.libguides.com/c.php?g=1531154",
   },

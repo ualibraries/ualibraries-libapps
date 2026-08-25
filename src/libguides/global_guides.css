@@ -555,12 +555,41 @@ div.tab-content {
       display: none;
     }
 
+    .clearfix > div {
+      /* Hide the commas */
+      font-size: 0;
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 2px;
+      row-gap: 6px;
+    }
+
     .s-lib-color-lt-grey {
       border-top: 1px solid var(--bs-border-color);
       margin-top: 0.5rem;
       padding-top: 0.5rem;
       display: block;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 500;
+      width: 100%;
+    }
+
+    .s-lib-color-lt-grey ~ a {
+      display: inline-block;
+      color: var(--bs-black);
+      background-color: var(--bs-light);
+      padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+      border-radius: var(--bs-border-radius-pill);
+      font-size: var(--bs-badge-font-size);
+      font-weight: var(--bs-badge-font-weight);
+      line-height: 1rem;
+      text-align: center;
+      white-space: nowrap;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
     }
   }
 }

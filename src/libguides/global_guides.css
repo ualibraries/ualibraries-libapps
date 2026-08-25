@@ -461,6 +461,8 @@ div.tab-content {
 }
 
 #s-lg-sb-cols {
+  min-height: 200px;
+
   .tab-content {
     padding: 0;
     border: 0;

@@ -397,6 +397,33 @@ div.tab-content {
 
   .s-lg-widget-list-more-results {
     margin-top: 1rem;
+
+    i {
+      display: none;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border: 2px solid var(--bs-blue);
+      border-radius: 3rem;
+      color: var(--bs-blue);
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    a:hover,
+    a:active {
+      color: var(--bs-white);
+      background-color: var(--bs-blue);
+      border-color: var(--bs-blue);
+    }
   }
 }
 

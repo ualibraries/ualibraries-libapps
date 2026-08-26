@@ -59,4 +59,8 @@ export const proxyList = [
     prefix: "/lg-guide-spring-share-redesign",
     target: "https://libguides.library.arizona.edu/design-reference?bs5=1",
   },
+  {
+    prefix: "/lg-search",
+    target: "https://libguides.library.arizona.edu/srch.php?default_lg=1&bs5=1",
+  },
 ];

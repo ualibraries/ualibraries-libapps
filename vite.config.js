@@ -15,17 +15,21 @@ export default defineConfig({
     proxy: {
       // On the A-Z page, Springshare loads additional resources from the root, so we need to proxy them here.
       "/process": {
-        target: "https://customertesting-ua.libguides.com",
+        target: "https://libguides.library.arizona.edu",
         changeOrigin: true,
       },
       "/web": {
-        target: "https://customertesting-ua.libguides.com",
+        target: "https://libguides.library.arizona.edu",
         changeOrigin: true,
       },
       "/lookfeel.css": {
-        target: "https://customertesting-ua.libguides.com",
+        target: "https://libguides.library.arizona.edu",
         changeOrigin: true,
       },
+      "/srch_process_cs.php": {
+        target: "https://libguides.library.arizona.edu",
+        changeOrigin: true,
+      }
     },
   },
   plugins: [

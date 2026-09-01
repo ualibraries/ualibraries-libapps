@@ -541,4 +541,65 @@ div.tab-content {
   font-size: var(--bs-body-font-size);
   margin: 0;
 }
+
+.s-srch-result-title {
+  font-size: var(--font-size-h5)!important;
+}
+
+.s-srch-result-author {
+  font-size: var(--bs-body-font-size);
+  a {
+    color: var(--bs-blue);
+  }
+  .metalabel {
+    font-weight: normal;
+  }
+}
+
+.s-srch-result-url {
+  font-size: var(--bs-body-font-size);
+}
+
+.s-srch-result-meta {
+  div {
+    .divider {
+      display: none;
+    }
+
+    .s-srch-result-subjects {
+      display: flex;
+
+      .metalabel {
+        display: none;
+        padding: 0;
+      }
+    }
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.s-srch-result-subjects {
+  font-size: 0;
+  gap: .2rem;
+
+  & > a {
+    color: var(--bs-black);
+    background-color: var(--bs-light);
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    border-radius: var(--bs-border-radius-pill);
+    font-size: var(--bs-badge-font-size);
+    font-weight: var(--bs-badge-font-weight);
+    line-height: 1rem;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
 /* END Search page styles */

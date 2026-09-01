@@ -602,4 +602,19 @@ div.tab-content {
   }
 }
 
+@media (max-width: 991px) {
+  #s-srch-source-0 {
+    .row {
+      & .col-md-9.col-left {
+        width: 100% !important;
+      }
+
+      & .col-md-3.col-right {
+        width: 100%;
+      }
+      flex-direction: column;
+    }
+  }
+}
+
 /* END Search page styles */

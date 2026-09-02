@@ -60,7 +60,11 @@ export const proxyList = [
     target: "https://libguides.library.arizona.edu/design-reference?bs5=1",
   },
   {
-    prefix: "/lg-search",
+    prefix: "/lg-search-with-filters",
     target: "https://libguides.library.arizona.edu/srch.php?default_lg=1&bs5=1",
+  },
+  {
+    prefix: "/lg-search-home",
+    target: "https://libguides.library.arizona.edu/srch.php?bs5=1",
   },
 ];

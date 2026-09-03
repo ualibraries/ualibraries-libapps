@@ -22,10 +22,9 @@ body {
   --font-size-h2: 2rem;
   --font-size-h4: 1.5rem;
   --font-size-h5: 1.25rem;
-  --font-size-h6: 1rem;
+
   /*  Colors */
   --bs-light-border-subtle: #e9ecef;
-  --Brand-azurite: #1E5288;
 
   /* Cards */
   --bs-card-spacer-x: 1rem;

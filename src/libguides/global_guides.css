@@ -486,7 +486,7 @@ div.tab-content {
 
 
 
-#s-lib-public-header-title {
+body:has(#s-lg-srch-local) #s-lib-public-header-title {
   margin: 0.75rem 0 0.7rem;
   font-size: var(--font-size-h2);
 }

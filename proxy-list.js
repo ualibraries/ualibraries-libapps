@@ -59,6 +59,9 @@ export const proxyList = [
     prefix: "/lg-guide-spring-share-redesign",
     target: "https://libguides.library.arizona.edu/design-reference?bs5=1",
   },
+  // Both entries point at srch.php. Adding default_lg=1 scopes the search to
+  // LibGuides, which renders the results list and its facet sidebar; without it
+  // srch.php renders the search landing page, listing each source separately.
   {
     prefix: "/lg-search-with-filters",
     target: "https://libguides.library.arizona.edu/srch.php?default_lg=1&bs5=1",

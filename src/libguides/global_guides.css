@@ -463,6 +463,7 @@ div.tab-content {
 
 #s-lg-srch-form {
   width: 100%;
+
   > div {
     margin-bottom: 0 !important;
   }
@@ -474,6 +475,7 @@ div.tab-content {
     margin-left: 1rem;
     /* .input-group squares the button's inner corners; restore them since margin-left detaches it from the field */
     border-radius: var(--bs-btn-border-radius);
+
     &:hover,
     &:focus-visible,
     &:active {
@@ -484,8 +486,6 @@ div.tab-content {
   }
 }
 
-
-
 body:has(#s-lg-srch-local) #s-lib-public-header-title {
   margin: 0.75rem 0 0.7rem;
   font-size: var(--font-size-h2);
@@ -493,8 +493,8 @@ body:has(#s-lg-srch-local) #s-lib-public-header-title {
 
 #s-srch-source-0 {
   .row {
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
     flex-direction: row-reverse;
 
     .col-md-3.col-right {

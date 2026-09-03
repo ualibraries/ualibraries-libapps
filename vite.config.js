@@ -2,6 +2,25 @@ import * as cheerio from "cheerio";
 import { defineConfig } from "vite";
 import { proxyList } from "./proxy-list.js";
 
+/**
+ * Compose the upstream URL for a proxied request. The remainder of the request
+ * path is appended to the target's path, and query params on the target act as
+ * defaults that the request can override.
+ */
+function buildUpstreamUrl({ prefix, target }, requestUrl) {
+  const targetUrl = new URL(target);
+  const upstreamUrl = new URL(
+    targetUrl.pathname + requestUrl.slice(prefix.length),
+    targetUrl,
+  );
+  for (const [key, value] of targetUrl.searchParams) {
+    if (!upstreamUrl.searchParams.has(key)) {
+      upstreamUrl.searchParams.set(key, value);
+    }
+  }
+  return upstreamUrl.href;
+}
+
 export default defineConfig({
   build: {
     lib: {
@@ -15,15 +34,15 @@ export default defineConfig({
     proxy: {
       // On the A-Z page, Springshare loads additional resources from the root, so we need to proxy them here.
       "/process": {
-        target: "https://libguides.library.arizona.edu",
+        target: "https://customertesting-ua.libguides.com",
         changeOrigin: true,
       },
       "/web": {
-        target: "https://libguides.library.arizona.edu",
+        target: "https://customertesting-ua.libguides.com",
         changeOrigin: true,
       },
       "/lookfeel.css": {
-        target: "https://libguides.library.arizona.edu",
+        target: "https://customertesting-ua.libguides.com",
         changeOrigin: true,
       },
       "/srch_process_cs.php": {
@@ -37,12 +56,8 @@ export default defineConfig({
       name: "LibApps middleware",
       configureServer(server) {
         server.middlewares.use(async (req, res, next) => {
-          const matchedProxy = proxyList.find(({ prefix }) =>
-            req.url.startsWith(prefix),
-          );
-          const fetchUrl = matchedProxy
-            ? matchedProxy.target + req.url.replace(matchedProxy.prefix, "")
-            : null;
+          const matchedProxy = proxyList.find(({ prefix }) => req.url.startsWith(prefix));
+          const fetchUrl = matchedProxy ? buildUpstreamUrl(matchedProxy, req.url) : null;
 
           if (fetchUrl) {
             const fetchRes = await fetch(fetchUrl);

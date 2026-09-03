@@ -48,7 +48,7 @@ export default defineConfig({
       "/srch_process_cs.php": {
         target: "https://libguides.library.arizona.edu",
         changeOrigin: true,
-      }
+      },
     },
   },
   plugins: [

@@ -578,6 +578,10 @@ body:has(#s-lg-srch-local) #s-lib-public-header-title {
   }
 }
 
+.s-srch-result-highlights {
+  display: block !important;
+}
+
 .s-srch-result-subjects {
   display: flex;
   flex-wrap: wrap;

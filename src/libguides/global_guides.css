@@ -570,6 +570,19 @@ div.tab-content {
     margin: 0;
     background-color: var(--bs-azurite);
     color: var(--bs-white);
+
+    .btn-close {
+      background: none;
+      color: var(--bs-white);
+      opacity: 1;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    .btn-close::before {
+      content: "close";
+      font-family: "Material Symbols Rounded";
+    }
   }
 
   .popover-body {

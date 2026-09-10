@@ -491,6 +491,26 @@ div.tab-content {
     margin-right: 2rem;
   }
 
+  .s-lib-box-idx-guide-list .s-lib-box-content {
+    .fa {
+      font-family: "Material Symbols Rounded";
+      font-size: 20px;
+      vertical-align: middle;
+    }
+
+    .fa-info-circle::before {
+      content: "info";
+    }
+
+    .fa-edit::before {
+      content: "calendar_clock";
+    }
+
+    .fa-eye::before {
+      content: "visibility";
+    }
+  }
+
   .s-lg-db-panel-title {
     font-size: var(--font-size-h4);
     font-weight: 500;

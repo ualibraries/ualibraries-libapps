@@ -661,10 +661,10 @@ div.tab-content {
   .s-lg-srch-wrap {
     margin-bottom: 2rem;
 
-    #s-lib-dropdown-0 {
+    a[id^="s-lib-dropdown-"] {
       color: var(--bs-blue);
       background-color: var(--bs-white);
-      border: 1px solid var(--bs-blue);
+      border: 2px solid var(--bs-blue);
       border-radius: 3rem;
       padding: 0.25rem 0.5rem;
       font-weight: 500;
@@ -672,10 +672,12 @@ div.tab-content {
       text-decoration: none;
       font-size: var(--bs-body-font-size);
       margin: 0;
+      vertical-align: middle;
     }
 
-    #s-lib-dropdown-0-container {
+    [id^="s-lib-dropdown-"][id$="-container"] {
       padding: 0;
+      margin-left: .5rem;
     }
   }
 }
@@ -859,6 +861,21 @@ body:has(#s-lg-srch-local) #s-lib-public-header-title {
 
       flex-direction: column;
     }
+  }
+}
+
+.s-lg-facet-div-content {
+  padding-left: .3rem;
+}
+
+.s-srch-range {
+  font-weight: 700;
+  font-size: var(--bs-body-font-size);
+}
+
+@media (max-width: 768px) {
+  #s-lg-srch-content {
+    gap: 1rem;
   }
 }
 

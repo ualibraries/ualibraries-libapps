@@ -233,35 +233,40 @@ npm run build
 
 The Vite config in this repo does two things during local development:
 
-1. Proxies a small set of Springshare resource paths directly to the sandbox host.
+1. Proxies a small set of Springshare resource paths directly to their upstream host.
 2. Uses custom middleware to fetch and transform LibGuides HTML before serving it locally.
 
 ### 1) Vite server proxy rules
 
-In [vite.config.js](vite.config.js), `server.proxy` forwards these paths to the sandbox LibGuides:
+Springshare pages request some resources from root-relative URLs. Without proxying them, local development pages can load with missing styles/scripts or broken interactions. In [vite.config.js](vite.config.js), `server.proxy` forwards these paths:
 
-- `/process`
-- `/web`
-- `/lookfeel.css`
-
-This is needed because the A-Z page requests those assets from root-relative URLs, and without proxying them, local development pages can load with missing styles/scripts.
+| Path | Upstream host | Needed by |
+| --- | --- | --- |
+| `/process` | sandbox | A-Z databases page |
+| `/web` | sandbox | A-Z databases page |
+| `/lookfeel.css` | sandbox | A-Z databases page |
+| `/srch_process_cs.php` | production | guide search page |
 
 ### 2) Custom middleware request flow
 
-The `LibApps middleware` in [vite.config.js](vite.config.js) runs on each incoming request and checks whether the URL starts with a configured prefix from [proxy-list.js](proxy-list.js):
+The `LibApps middleware` in [vite.config.js](vite.config.js) runs on each incoming request and checks it against the prefixes configured in [proxy-list.js](proxy-list.js). A prefix matches when the request is exactly the prefix or continues with `/` or `?`, so a shorter prefix never swallows a longer one (`/db` does not match a request for `/db-sandbox`).
 
-- `/db-sandbox` -> sandbox A-Z databases path
-- `/db` -> production A-Z databases path
-- `/lg` -> production LibGuides path
+Each entry maps a local prefix to an upstream page, for example:
+
+- `/db-sandbox` -> sandbox A-Z databases page
+- `/db` -> production A-Z databases page
+- `/lg-search-with-filters` -> production guide search page
 
 If a prefix matches, the middleware:
 
-1. Builds the upstream URL from the matching target + remainder of the request path.
+1. Builds the upstream URL from the matching target. Whatever the request carries beyond the prefix is appended to the target's path, and query params on the target act as defaults that the request can override.
 2. Fetches the upstream HTML.
-3. Removes the old header/footer. (`#header_ua`, `#header_site`, `#footer_site`).
-4. Injects local mount points (`#ualibraries-header`, `#ualibraries-footer`).
-5. Appends `<script type="module" src="/helper.js"></script>` so local helper logic runs.
-6. Returns transformed HTML to the browser.
+3. Rewrites links pointing back at the same upstream page to use the local prefix instead, so navigation stays inside the local shell. Matching ignores the target's query string, so links carrying their own params (search terms, facets, pagination) are rewritten too.
+4. Removes the old header/footer (`#header_ua`, `#header_site`, `#footer_site`, `#ualibraries-banner`, `footer.footer`).
+5. Removes the deployed LibApps CSS/JS so it does not conflict with the local versions.
+6. Injects local mount points (`#ualibraries-header`, `#ualibraries-footer`).
+7. Appends `<script type="module" src="/helper.js"></script>` and `<script type="module" src="/src/main.js"></script>` so local helper logic and styles run.
+8. Returns transformed HTML to the browser.
 
 If no prefix matches, the middleware calls `next()` so normal Vite handling continues.
 

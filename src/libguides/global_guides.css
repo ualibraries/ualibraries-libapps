@@ -677,7 +677,7 @@ div.tab-content {
 
     [id^="s-lib-dropdown-"][id$="-container"] {
       padding: 0;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
   }
 }
@@ -865,7 +865,7 @@ body:has(#s-lg-srch-local) #s-lib-public-header-title {
 }
 
 .s-lg-facet-div-content {
-  padding-left: .3rem;
+  padding: 0.25rem;
 }
 
 .s-srch-range {

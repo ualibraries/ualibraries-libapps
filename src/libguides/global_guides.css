@@ -453,7 +453,7 @@ div.tab-content {
     font-size: 0.875rem;
   }
 
-  button {
+  #s-lg-sb-nav-1 button {
     color: var(--bs-white);
     background-color: var(--bs-blue);
     border-color: var(--bs-blue);
@@ -461,8 +461,6 @@ div.tab-content {
 }
 
 #s-lg-sb-cols {
-  min-height: 200px;
-
   .tab-content {
     padding: 0;
     border: 0;

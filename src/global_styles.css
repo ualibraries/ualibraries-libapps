@@ -144,7 +144,9 @@ div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online:hover,
   align-items: center;
 }
 
-/* Make all pagination buttons exactly 40px wide */
+/* --- End breadcrumb styles --- */
+
+/* --- Start pagination styles --- */
 .pagination .page-item {
   width: 40px;
 }
@@ -162,6 +164,8 @@ div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online:hover,
 .pagination .page-item:not(:first-child) .page-link {
   border-left: 0;
 }
+
+/* --- End pagination styles --- */
 
 /* --- End global styles --- */
 

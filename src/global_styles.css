@@ -144,4 +144,24 @@ div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online:hover,
   align-items: center;
 }
 
+/* Make all pagination buttons exactly 40px wide */
+.pagination .page-item {
+  width: 40px;
+}
+
+.pagination .page-link {
+  width: 100%;
+  min-width: 0;
+  margin-left: 0 !important;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+/* Avoid doubled borders between pagination buttons */
+.pagination .page-item:not(:first-child) .page-link {
+  border-left: 0;
+}
+
 /* --- End global styles --- */
+

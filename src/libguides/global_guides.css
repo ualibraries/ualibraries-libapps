@@ -879,4 +879,8 @@ body:has(#s-lg-srch-local) #s-lib-public-header-title {
   }
 }
 
+.s-srch-result-url {
+  display: none !important;
+}
+
 /* END Search page styles */

@@ -33,12 +33,21 @@
   margin-right: 0.25rem;
 }
 
+/* --- Start result badge styles --- */
+.s-lg-az-result-badge-featured {
+  background-color: var(--bs-leaf);
+}
+
 .s-lg-az-result-badge-new {
   background-color: var(--bs-river);
 }
 
 .s-lg-az-result-badge-popular {
   background-color: var(--bs-dark);
+}
+
+.s-lg-az-result-badge-trial {
+  background-color: var(--bs-mesa);
 }
 
 .az-icons ul,

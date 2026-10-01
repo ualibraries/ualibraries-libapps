@@ -1,111 +1,147 @@
-<body class="s-lib-public-body">
-	{{skip_link}}
-	{{obsolete_browser_alert}}
-{{ADMIN_CMD_BAR}}
-	<!-- BEGIN: Page Header -->
-	{{public_header}}
-	<!-- END: Page Header -->
-<!-- BEGIN: Guide Header -->
-<div id="s-lg-guide-header" class="container s-lib-header s-lib-side-borders">
-    <div class="pull-right">
-        {{ADMIN_MINI_CMD_BAR}}
-    </div>
-    <div id="s-lg-guide-header-info">
-        <h1 id="s-lg-guide-name">{{guide_title}}</h1>
-        <div id="s-lg-guide-desc-container">
-            <span id="s-lg-guide-description">{{guide_description}}</span>
-        </div>
-    </div>
-</div>
-<!-- END: Guide Header -->
-<!-- BEGIN: content -->
-<div id="s-lib-public-main" class="s-lib-main container s-lib-side-borders" tabindex="-1">
-<div id="s-lg-index-cols" class="row">
-	<!-- BEGIN: Left sidebar - Filtering and Search Tools -->
-	<div id="col1" class="col-md-3 center">
-	<div id="filter-search-container"></div>
-        {{side_nav_boxes}}
-	</div>
-
-	<!-- END: Left sidebar - Filtering and Search Tools -->
-	
-	<!-- BEGIN: Guide List -->
-	<div id="col2" class="col-md-9 center">
-            <div class="s-lg-tab-content">
-                <div id="s-lg-guide-main" class="tab-pane active" tabindex="-1">
-                    {{content}}
+<body class="s-lg-guide-body d-flex flex-column h-100">
+    <a
+        href="#s-lib-public-main"
+        class="visually-hidden-focusable btn btn-dark position-absolute start-50 translate-middle-x z-1 mt-1"
+    >
+        Skip to main content</a
+    >
+    {{ADMIN_CMD_BAR}}
+    <div id="ualibraries-guide-header">
+        {{public_header}}
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="my-3">{{breadcrumbs}}</div>
                 </div>
             </div>
-		<div id="guide-list-container">
-			<i class="fa fa-refresh fa-spin"></i> Loading...
-		</div>
-	</div>
-<script>
-$( document ).ready(function() {
-var pageURL = $(location).attr("href");
-var querystring = pageURL.split('?')[1];
-$( "#guide-list-container" ).load( "https://wfos6i0g39.execute-api.us-west-2.amazonaws.com/portal_filtered_results?"+querystring);
-$("#filter-search-container").load("https://wfos6i0g39.execute-api.us-west-2.amazonaws.com/portal_filter_opts?"+querystring);
-});
-</script>
-		<!-- END: Guide List -->
-		</div>
-	</div>
-	<!-- END: content -->
-	<div id="s-lib-alert" title=""><div id="s-lib-alert-content"></div></div>	<!-- popover.twig -->
-<div id="s-lib-popover-title" class="hide">
-	<span class="text-info">
-		<strong>title</strong>
-	</span>
-
-	<button type="button" id="popclose" class="close" onclick="jQuery('.s-lib-popover').popover('hide')">
-		&times;
-	</button>
-</div>
-
-<div id="s-lib-popover-content" class="hide">
-	<i class="fa fa-refresh fa-spin"></i> Loading...
-	<button class="btn btn-default btn-sm popclose" type="button">Close</button>
-</div>
-<!-- !popover.twig -->
-	<!-- scroll_top.twig -->
-<div id="s-lib-scroll-top">
-	<a href="javascript:void(0);" onclick="jQuery('body').focus();" title="Back to Top"
-	   aria-label="Back to Top">
-		<span class="fa-stack fa-lg" aria-hidden="true">
-			<i class="fa fa-square-o fa-stack-2x"></i>
-			<i class="fa fa-angle-double-up fa-stack-1x" style="position:relative; bottom:2px;"></i>
-		</span>
-	</a>
-</div>
-<!-- !scroll_top.twig -->
-<!-- BEGIN: Page Footer -->
-<div id="s-lib-footer-public"
-     class="s-lib-footer footer container s-lib-side-borders">
-    <div id="s-lg-guide-header-meta" class="pad-top-sm pad-left-med clearfix">
-        <ul id="s-lg-guide-header-attributes" class="">
-            <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
-                {{last_updated_display}}            </li>
-            <li id="s-lg-guide-header-url" class="s-lg-h-separator">
-                {{guide_url_display}}
-            </li>
-            <li id="s-lg-guide-print-url">
-                {{print_url_display}}
-            </li>
-        </ul>
-        <div id="s-lib-footer-login-link" class="pull-right pad-right-med">
-            {{login_url_display}}        </div>
-    </div>
-    <div class="pad-bottom-sm clearfix">
-        <div id="s-lib-footer-support-link" class="pull-right pad-right-med">
-            <a href="https://libguides.library.arizona.edu/tech-support">Report a problem</a>        </div>
-        <div id="s-lg-guide-header-subjects" class="pad-top-sm pad-left-med pad-right-med pull-left">
-            {{guide_subjects}}
-        </div>
-        <div id="s-lg-guide-header-tags" class="pad-top-sm pad-left-med">
-            {{guide_tags}}
         </div>
     </div>
-</div>
-<!-- END: Page Footer -->
-	</body>
+    <main class="flex-shrink-0 mb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="mt-0">{{guide_title}}: {{page_title}}</h1>
+                    <div id="s-lg-guide-desc-container">
+                        <span id="s-lg-guide-description"
+                            >{{guide_description}}</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            id="s-lib-public-main"
+            class="s-lib-main container s-lib-side-borders"
+            tabindex="-1"
+        >
+            <div id="s-lg-index-cols" class="row">
+                <!-- BEGIN: Left sidebar - Filtering and Search Tools -->
+                <div id="col1" class="col-md-3 center">
+                    <div id="filter-search-container"></div>
+                    {{side_nav_boxes}}
+                </div>
+
+                <!-- END: Left sidebar - Filtering and Search Tools -->
+
+                <!-- BEGIN: Guide List -->
+                <div id="col2" class="col-md-9 center">
+                    <div class="s-lg-tab-content">
+                        <div
+                            id="s-lg-guide-main"
+                            class="tab-pane active"
+                            tabindex="-1"
+                        >
+                            {{content}}
+                        </div>
+                    </div>
+                    <div id="guide-list-container">
+                        <i class="fa fa-refresh fa-spin"></i> Loading...
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        var pageURL = $(location).attr("href");
+                        var querystring = pageURL.split("?")[1];
+                        $("#guide-list-container").load(
+                            "https://wfos6i0g39.execute-api.us-west-2.amazonaws.com/portal_filtered_results?" +
+                                querystring,
+                        );
+                        $("#filter-search-container").load(
+                            "https://wfos6i0g39.execute-api.us-west-2.amazonaws.com/portal_filter_opts?" +
+                                querystring,
+                        );
+                    });
+                </script>
+                <!-- END: Guide List -->
+            </div>
+        </div>
+    </main>
+    <div
+        id="s-lib-footer-public"
+        class="s-lib-footer footer container s-lib-side-borders"
+    >
+        <div id="s-lg-guide-header-meta" class="pt-2 ps-3 clearfix">
+            <ul id="s-lg-guide-header-attributes">
+                <li id="s-lg-guide-header-updated" class="s-lg-h-separator">
+                    {{last_updated_display}}
+                </li>
+                <li id="s-lg-guide-header-url" class="s-lg-h-separator">
+                    {{guide_url_display}}
+                </li>
+                <li id="s-lg-guide-print-url">{{print_url_display}}</li>
+            </ul>
+            <div id="s-lib-footer-login-link" class="float-end pe-3">
+                {{login_url_display}}
+            </div>
+        </div>
+    </div>
+
+    <!-- popover.twig -->
+    <div id="s-lib-popover-title" class="hide">
+        <span class="text-info">
+            <strong>title</strong>
+        </span>
+
+        <button
+            type="button"
+            id="popclose"
+            class="close"
+            onclick="jQuery('.s-lib-popover').popover('hide')"
+        >
+            &times;
+        </button>
+    </div>
+
+    <div id="s-lib-popover-content" class="hide">
+        <i class="fa fa-refresh fa-spin"></i> Loading...
+        <button class="btn btn-default btn-sm popclose" type="button">
+            Close
+        </button>
+    </div>
+    <!-- !popover.twig -->
+
+    <!-- scroll_top.twig -->
+    <div id="s-lib-scroll-top">
+        <a
+            href="javascript:void(0);"
+            onclick="jQuery('body').focus()"
+            title="Back to Top"
+            aria-label="Back to Top"
+        >
+            <span class="fa-stack fa-lg" aria-hidden="true">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i
+                    class="fa fa-angle-double-up fa-stack-1x"
+                    style="position: relative; bottom: 2px"
+                ></i>
+            </span>
+        </a>
+    </div>
+    <!-- !scroll_top.twig -->
+
+    <div id="s-lib-alert" title="">
+        <div id="s-lib-alert-content"></div>
+    </div>
+
+    {{public_footer}}
+</body>

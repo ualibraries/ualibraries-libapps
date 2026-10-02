@@ -904,3 +904,73 @@ body:has(#s-lg-srch-local) #s-lib-public-header-title {
 }
 
 /* END Search page styles */
+
+/* E-Reserves styles */
+
+#s-lg-er-nav nav {
+  --bs-nav-link-padding-x: 1rem;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: 700;
+  --bs-nav-link-color: #1e5288;
+  --bs-nav-link-hover-color: #03132e;
+  --bs-nav-link-disabled-color: #49595e;
+  list-style: none;
+}
+
+#s-lg-er-nav > ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#s-lg-er-nav .nav-pills {
+  --bs-nav-tabs-border-width: var(--bs-border-width);
+  --bs-nav-tabs-border-color: #e9ecef;
+  --bs-nav-tabs-border-radius: var(--bs-border-radius);
+  --bs-nav-tabs-link-hover-border-color: var(--bs-secondary-bg) var(--bs-secondary-bg) #e9ecef;
+  --bs-nav-tabs-link-active-color: #03132e;
+  --bs-nav-tabs-link-active-bg: #fff;
+  --bs-nav-tabs-link-active-border-color: #e9ecef #e9ecef #fff;
+  border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
+}
+
+#s-lg-er-nav {
+  .nav-pills > :nth-child(n+2) {
+    margin-left: .5rem;
+  }
+}
+
+#s-lg-er-nav .nav-pills .btn {
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  background: 0 0;
+  border: 0;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
+  border: var(--bs-nav-tabs-border-width) solid transparent;
+  border-top-left-radius: var(--bs-nav-tabs-border-radius);
+  border-top-right-radius: var(--bs-nav-tabs-border-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: #e9ecef;
+}
+
+#s-lg-er-nav .nav-pills .s-lg-index-nav-btn.active .btn {
+  border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
+  color: var(--bs-nav-tabs-link-active-color);
+  background-color: var(--bs-nav-tabs-link-active-bg);
+  border-color: var(--bs-nav-tabs-link-active-border-color);
+}
+
+#s-lg-er-nav-bottom {
+  padding: 1rem 0;
+}
+
+#s-lg-er-nav-bottom form {
+  float: none !important;
+}
+
+/* END E-Reserves styles */

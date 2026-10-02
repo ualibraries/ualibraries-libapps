@@ -40,10 +40,6 @@ export const proxyList = [
     target: "https://customertesting-ua.libguides.com/hps",
   },
   {
-    prefix: "/lg-guide-tps",
-    target: "https://customertesting-ua.libguides.com/tps_plan",
-  },
-  {
     prefix: "/lg-guide-black-history",
     target: "https://customertesting-ua.libguides.com/c.php?g=1531144",
   },
@@ -66,6 +62,14 @@ export const proxyList = [
   {
     prefix: "/lg-guide-spring-share-redesign",
     target: "https://libguides.library.arizona.edu/design-reference?bs5=1",
+  },
+  {
+    prefix: "/lg-guide-tps",
+    target: "https://libguides.library.arizona.edu/tps/home?bs5=1",
+  },
+  {
+    prefix: "/lg-guide-tps-plan",
+    target: "https://customertesting-ua.libguides.com/tps_plan",
   },
   {
     prefix: "/lg-guide-tps-search",

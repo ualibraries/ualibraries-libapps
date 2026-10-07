@@ -79,11 +79,7 @@ export default defineConfig({
         target: "https://libguides.library.arizona.edu",
         changeOrigin: true,
       },
-      "/ereserves/process/list/term": {
-        target: "https://libguides.library.arizona.edu",
-        changeOrigin: true
-      },
-      "/ereserves/process/list/courses": {
+      "/ereserves/process/list": {
         target: "https://libguides.library.arizona.edu",
         changeOrigin: true
       },

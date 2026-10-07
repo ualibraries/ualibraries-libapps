@@ -1,9 +1,15 @@
 import { expect, test } from "@playwright/test";
 
+const removeWarningAlert = (page) =>
+  page
+    .locator(".alert-warning")
+    .evaluateAll((alerts) => alerts.forEach((alert) => alert.remove()));
+
 test("A-Z Databases", async ({ page }) => {
   await page.goto("https://libguides.library.arizona.edu/az/databases");
 
   await page.waitForLoadState("networkidle");
+  await removeWarningAlert(page);
 
   await expect(page).toHaveScreenshot("az-database.png");
 
@@ -20,6 +26,7 @@ test("A-Z Databases filter", async ({ page }) => {
   );
 
   await page.waitForLoadState("networkidle");
+  await removeWarningAlert(page);
 
   await expect(page).toHaveScreenshot("az-database-filter.png");
 

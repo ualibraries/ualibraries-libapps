@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 const removeWarningAlert = (page) =>
   page
-    .locator(".alert.alert-warning.alert-dismissible")
+    .locator(".alert-warning")
     .evaluateAll((alerts) => alerts.forEach((alert) => alert.remove()));
 
 test("A-Z Databases", async ({ page }) => {

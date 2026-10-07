@@ -779,6 +779,26 @@ body:has(#s-lg-srch-local) #s-lib-public-header-title {
     padding-left: 0 !important;
     float: none !important;
   }
+
+  /* --- Start pagination styles --- */
+  .pagination .page-item {
+    width: 40px;
+  }
+
+  .pagination .page-link {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  /* Avoid doubled borders between pagination buttons */
+  .pagination .page-item:not(:first-child) .page-link {
+    border-left: 0;
+  }
+  /* --- End pagination styles --- */
 }
 
 .s-srch-result-title {

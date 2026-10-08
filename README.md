@@ -246,6 +246,7 @@ Springshare pages request some resources from root-relative URLs. Without proxyi
 | `/web` | sandbox | A-Z databases page |
 | `/lookfeel.css` | sandbox | A-Z databases page |
 | `/srch_process_cs.php` | production | guide search page |
+| `/ereserves/process/list` | production | E-Reserves (Course Ebooks) page |
 
 ### 2) Custom middleware request flow
 
@@ -256,6 +257,7 @@ Each entry maps a local prefix to an upstream page, for example:
 - `/db-sandbox` -> sandbox A-Z databases page
 - `/db` -> production A-Z databases page
 - `/lg-search-with-filters` -> production guide search page
+- `/lg-guide-er` -> production E-Reserves (Course Ebooks) page
 
 If a prefix matches, the middleware:
 

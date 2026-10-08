@@ -5,7 +5,7 @@ import "./libguides/global_guides.css";
 // Remove Springshare stylesheet references from page source
 document.addEventListener("DOMContentLoaded", () => {
   // List of filenames to be removed
-  const sheetsToRemove = ["lookfeel.css", "lg-public-bs5.min.css", "lg-public-bs535.min.css"];
+  const sheetsToRemove = ["lookfeel.css", "lg-public-bs"];
 
   // Loop through sheetsToRemove, remove each from DOM
   sheetsToRemove.forEach((filename) => {

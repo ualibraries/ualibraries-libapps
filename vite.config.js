@@ -79,9 +79,10 @@ export default defineConfig({
         target: "https://libguides.library.arizona.edu",
         changeOrigin: true,
       },
+      // On the E-Reserves page, the course list is loaded via AJAX from this root-relative path.
       "/ereserves/process/list": {
         target: "https://libguides.library.arizona.edu",
-        changeOrigin: true
+        changeOrigin: true,
       },
     },
   },

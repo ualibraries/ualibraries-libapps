@@ -972,7 +972,8 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
   }
 }
 
-#s-lg-er-content #s-lg-general-accordion [id^="collapse"][id$="_heading"] button > div:first-child {
+/* Hide the course-count badge in each accordion header */
+#s-lg-er-content .accordion-button .badge {
   display: none;
 }
 

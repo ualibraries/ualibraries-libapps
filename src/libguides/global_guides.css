@@ -5,7 +5,7 @@
   border-width: var(--bs-border-width);
   border-style: var(--bs-border-style);
   border-color: var(--bs-border-color);
-  padding: var(--bs-card-spacer-x) var(--bs-card-spacer-y);
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
 }
 .s-lib-main .s-lg-col-boxes > div {
   margin-bottom: 2rem;
@@ -997,7 +997,7 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
       border-width: var(--bs-border-width);
       border-style: var(--bs-border-style);
       border-color: var(--bs-border-color);
-      padding: var(--bs-card-spacer-x) var(--bs-card-spacer-y);
+      padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
       margin-bottom: 1rem;
     }
   }

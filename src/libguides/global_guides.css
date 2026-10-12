@@ -1033,7 +1033,8 @@ body:has(#s-lg-er-cols) #s-lib-public-header-desc {
     margin-left: 1rem;
   }
 
-  .s-lg-gtitle a {
+  .s-lg-gtitle a,
+  .s-lg-er-doc-link {
     font-size: 1.125rem;
   }
 }
@@ -1041,4 +1042,13 @@ body:has(#s-lg-er-cols) #s-lib-public-header-desc {
 #s-lg-er-list-controls h2 {
   margin-top: 0;
 }
+
+#s-lg-er-cols .tab-content {
+  border: none;
+}
+
+.s-lg-er-doc-link {
+  font-weight: 500;
+}
+
 /* END E-Reserves styles */

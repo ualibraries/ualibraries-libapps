@@ -24,7 +24,8 @@
 /* END box content styling */
 
 /* Profile image */
-.s-lib-main .s-lib-profile-container img {
+/* Limit image size when inside a half-width column */
+.s-lib-main .col-md-6 .s-lib-profile-container img {
   max-width: 33.33%;
 }
 

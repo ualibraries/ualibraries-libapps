@@ -5,7 +5,7 @@
   border-width: var(--bs-border-width);
   border-style: var(--bs-border-style);
   border-color: var(--bs-border-color);
-  padding: var(--bs-card-spacer-x) var(--bs-card-spacer-y);
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
 }
 .s-lib-main .s-lg-col-boxes > div {
   margin-bottom: 2rem;
@@ -716,7 +716,8 @@ div.tab-content {
   }
 }
 
-body:has(#s-lg-srch-local) #s-lib-public-header-title {
+body:has(#s-lg-srch-local) #s-lib-public-header-title,
+body:has(#s-lg-er-cols) #s-lib-public-header-title {
   margin: 0.75rem 0 0.7rem;
   font-size: var(--font-size-h2);
 }
@@ -905,3 +906,149 @@ body:has(#s-lg-srch-local) #s-lib-public-header-title {
 }
 
 /* END Search page styles */
+
+/* E-Reserves styles */
+
+#s-lg-er-nav {
+  .nav {
+    gap: 0.5rem;
+  }
+
+  & > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .nav-pills {
+    --bs-nav-tabs-border-width: var(--bs-border-width);
+    --bs-nav-tabs-border-color: var(--bs-light-border-subtle);
+    --bs-nav-tabs-border-radius: var(--bs-border-radius);
+    --bs-nav-tabs-link-active-color: var(--bs-midnight);
+    --bs-nav-tabs-link-active-bg: var(--bs-white);
+    --bs-nav-tabs-link-active-border-color: var(--bs-light-border-subtle)
+      var(--bs-light-border-subtle) var(--bs-white);
+    border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
+
+    .btn {
+      display: block;
+      padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+      font-weight: var(--bs-nav-link-font-weight);
+      color: var(--bs-nav-link-color);
+      text-decoration: none;
+      background-color: var(--bs-gray-200);
+      border: var(--bs-nav-tabs-border-width) solid transparent;
+      border-radius: var(--bs-nav-tabs-border-radius) var(--bs-nav-tabs-border-radius) 0 0;
+      margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
+      transition:
+        color 0.15s ease-in-out,
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      color: var(--bs-nav-link-hover-color);
+      background-color: var(--bs-gray-300);
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--bs-blue);
+      outline-offset: -2px;
+    }
+
+    .s-lg-index-nav-btn.active .btn {
+      border-radius: var(--bs-border-radius) var(--bs-border-radius) 0 0;
+      color: var(--bs-nav-tabs-link-active-color);
+      background-color: var(--bs-nav-tabs-link-active-bg);
+      border-color: var(--bs-nav-tabs-link-active-border-color);
+    }
+  }
+}
+
+#s-lg-er-nav-bottom {
+  padding: 1rem 0;
+
+  form {
+    float: none !important;
+  }
+}
+
+/* Hide the course-count badge in each accordion header */
+#s-lg-er-content .accordion-button .badge {
+  display: none;
+}
+
+#s-lg-er-cols {
+  &> #col1 {
+    margin-bottom: 2rem;
+  }
+
+  &> #col2 {
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-family: var(--bs-body-font-family);
+      font-size: 1rem;
+      font-weight: 700;
+      border-bottom: 1px solid var(--bs-gray-400);
+      color: var(--bs-gray-600);
+    }
+
+    &> div {
+      border-radius: var(--bs-border-radius);
+      border-width: var(--bs-border-width);
+      border-style: var(--bs-border-style);
+      border-color: var(--bs-border-color);
+      padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+body:has(#s-lg-er-cols) #s-lg-public-skiplink {
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  position: absolute;
+}
+
+body:has(#s-lg-er-cols) #s-lib-public-header-desc {
+  margin-bottom: 1rem;
+}
+
+#s-lg-er-content {
+  .s-lib-box {
+    border: none;
+    border-bottom: 1px solid var(--bs-border-color);
+    padding: 1rem 0;
+    border-radius: 0;
+  }
+
+  .s-lib-box-content .s-lg-gmeta {
+    margin-left: 1rem;
+  }
+
+  .s-lg-gtitle a,
+  .s-lg-er-doc-link {
+    font-size: 1.125rem;
+  }
+}
+
+#s-lg-er-list-controls h2 {
+  margin-top: 0;
+}
+
+#s-lg-er-cols .tab-content {
+  border: none;
+}
+
+.s-lg-er-doc-link {
+  font-weight: 500;
+}
+
+/* END E-Reserves styles */

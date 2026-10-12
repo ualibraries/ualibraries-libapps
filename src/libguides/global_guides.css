@@ -985,13 +985,10 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
 
   &> #col2 {
     h2 {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-family: var(--bs-body-font-family);
-      font-size: 1rem;
-      font-weight: 700;
-      border-bottom: 1px solid var(--bs-gray-400);
-      color: var(--bs-gray-600);
+      font-size: var(--font-size-h4);
+      margin: 0 0 1rem 0;
+      padding-bottom: 1rem;
+      border-bottom: var(--bs-border-width) solid var(--bs-border-color);
     }
 
     &> div {

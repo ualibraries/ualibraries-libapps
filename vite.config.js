@@ -84,6 +84,10 @@ export default defineConfig({
         target: "https://libguides.library.arizona.edu",
         changeOrigin: true,
       },
+      "/prf_process.php": {
+        target: "https://libguides.library.arizona.edu",
+        changeOrigin: true,
+      },
     },
   },
   plugins: [

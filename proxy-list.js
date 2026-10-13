@@ -79,6 +79,15 @@ export const proxyList = [
     prefix: "/lg-guide-er",
     target: "https://libguides.library.arizona.edu/er.php?b=t&bs5=1",
   },
+  {
+    prefix: "/lg-guide-prf",
+    target: "https://libguides.library.arizona.edu/prf.php?bs5=1",
+  },
+// Example of individual staff profile
+  {
+    prefix: "/lg-guide-prf-indv",
+    target: "https://libguides.library.arizona.edu/prf.php?id=599ff1a1-7cdb-11ed-9922-0ad758b798c3&bs5=1",
+  },
   // Both entries point at srch.php. Adding default_lg=1 scopes the search to
   // LibGuides, which renders the results list and its facet sidebar; without it
   // srch.php renders the search landing page, listing each source separately.

@@ -500,21 +500,25 @@ div.tab-content {
 }
 
 #s-lg-sb-content-guides,
-#s-lg-sb-content-databases {
+#s-lg-sb-content-databases,
+#s-lg-profile-cols {
   .s-lib-box {
+    display: inline-block;
     border: 0;
     border-bottom: 1px solid var(--bs-border-color);
     border-radius: 0;
     padding: 1rem 0;
+    width: 100%;
   }
 
   .s-lib-box-idx-guide-list .s-lg-gtitle {
+    display: inline;
     font-size: 1.125rem;
     margin-bottom: 0.25rem;
   }
 
-  .s-lib-box-idx-guide-list .s-lib-color-lt-grey {
-    margin-right: 2rem;
+  .s-lib-box-idx-guide-list .hitst {
+    margin-left: 2rem;
   }
 
   .s-lib-box-idx-guide-list .s-lib-box-content {
@@ -941,26 +945,12 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
     margin-top: 0;
   }
 
-  .s-lib-box.s-lib-box-idx-guide-list {
-    display: inline-block;
-    border: 0;
-    border-bottom: 1px solid var(--bs-light-border-subtle);
-    border-radius: 0;
-    padding: 0 0 0.5rem 0;
-    margin-bottom: 1rem;
-    width: 100%;
-    font-size: 1.125rem;
-
-    .s-lib-box-content .s-lg-gtitle {
-      display: inline;
-    }
-  }
-
   .s-ui-helptip {
     display: inline-block;
 
     button {
       padding: 0;
+      color: var(--bs-body-color);
     }
   }
 }

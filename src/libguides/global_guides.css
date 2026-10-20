@@ -912,6 +912,12 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
 /* END Search page styles */
 
 /* Profile page styles */
+#s-lib-public-header-desc-title {
+  color: var(--bs-blue);
+  font-size: var(--font-size-h5);
+  font-weight: 500;
+}
+
 #s-lg-profile-cols {
   .s-lib-profile-container,
   .ua-profile-specialties,

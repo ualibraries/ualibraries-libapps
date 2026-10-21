@@ -500,21 +500,25 @@ div.tab-content {
 }
 
 #s-lg-sb-content-guides,
-#s-lg-sb-content-databases {
+#s-lg-sb-content-databases,
+#s-lg-profile-cols {
   .s-lib-box {
+    display: inline-block;
     border: 0;
     border-bottom: 1px solid var(--bs-border-color);
     border-radius: 0;
     padding: 1rem 0;
+    width: 100%;
   }
 
   .s-lib-box-idx-guide-list .s-lg-gtitle {
+    display: inline;
     font-size: 1.125rem;
     margin-bottom: 0.25rem;
   }
 
-  .s-lib-box-idx-guide-list .s-lib-color-lt-grey {
-    margin-right: 2rem;
+  .s-lib-box-idx-guide-list .hitst {
+    margin-left: 2rem;
   }
 
   .s-lib-box-idx-guide-list .s-lib-box-content {
@@ -907,6 +911,164 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
 
 /* END Search page styles */
 
+/* Profile page styles */
+#s-lib-public-header-desc-title {
+  color: var(--bs-blue);
+  font-size: var(--font-size-h5);
+  font-weight: 500;
+}
+
+#s-lg-profile-cols {
+  .s-lib-profile-container,
+  .ua-profile-specialties,
+  #s-lg-profile-search-div,
+  #s-lg-profile-az-div,
+  #s-lg-profile-help-div,
+  #s-lg-profile-guides-div {
+    border-radius: var(--bs-border-radius);
+    border-width: var(--bs-border-width);
+    border-style: var(--bs-border-style);
+    border-color: var(--bs-border-color);
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    margin-bottom: 1rem;
+
+    .s-lib-public-side-header h2 {
+      font-size: 1.5rem;
+      border-bottom: 2px solid var(--bs-light-border-subtle);
+      padding-bottom: 0.75rem;
+    }
+
+    .txt.pad-top-sm,
+    #s-lg-guide-search {
+      margin-bottom: 0.75rem;
+    }
+
+    .btn {
+      border-color: transparent;
+      background-color: var(--bs-red);
+    }
+  }
+
+  .s-lib-profile-container {
+    padding: 0 var(--bs-card-spacer-x);
+  }
+
+  .s-lib-profile-container .s-lib-profile-image img {
+    border-top-left-radius: var(--bs-border-radius);
+    border-top-right-radius: var(--bs-border-radius);
+  }
+
+  .ua-profile-specialties .prf-subject-specialities {
+    font-size: var(--bs-body-font-size) !important;
+  }
+
+  .s-lib-public-side-header h2 {
+    margin-top: 0;
+  }
+
+  .s-ui-helptip {
+    display: inline-block;
+
+    button {
+      padding: 0;
+      color: var(--bs-body-color);
+    }
+  }
+}
+
+/* Profile landing page */
+#s-lg-profile-nav {
+  background: var(--bs-light);
+  border-radius: var(--bs-border-radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 2rem;
+
+  .nav {
+    align-items: center;
+  }
+
+  #s-lg-profile-count-btn {
+    margin-right: 2rem;
+  }
+
+  #s-lg-profile-count {
+    color: var(--bs-body-color);
+    background-color: var(--bs-info) !important;
+  }
+
+  #s-lg-profile-name-btn,
+  #s-lg-profile-subject-btn {
+    .nav-link.active {
+      background-color: var(--bs-gray-400);
+    }
+  }
+}
+
+#s-lg-profile-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 160px);
+  justify-content: space-between;
+  gap: 1.5rem 1rem;
+
+  .s-lib-featured-profile-container {
+    margin: 0 !important;
+    text-align: center;
+  }
+
+  .s-lib-featured-profile-image {
+    height: 160px;
+  }
+
+  .s-lib-featured-profile-name {
+    margin-top: 0.5rem;
+    font-weight: 700;
+  }
+
+  .s-lib-featured-profile-spacer {
+    display: none;
+  }
+}
+
+#s-lg-profile-subjects {
+  #sel-guide-drop {
+    height: 36px;
+  }
+
+  .btn {
+    border-color: transparent;
+    background-color: var(--bs-blue);
+    font-size: 1rem;
+  }
+}
+
+#s-lg-profile-guides-div {
+  .s-lg-system-list {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      border-bottom: 1px solid var(--bs-light-border-subtle);
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .s-lg-guide-list-info {
+      font-size: 0.9rem;
+
+      .pad-right-sm {
+        margin-right: 0.25rem;
+      }
+    }
+
+    .s-lg-guide-info-account,
+    .s-lg-guide-info-updated,
+    .s-lg-guide-info-views {
+      white-space: nowrap;
+    }
+  }
+}
+/* End Profile page styles */
+
 /* E-Reserves styles */
 
 #s-lg-er-nav {
@@ -927,7 +1089,8 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
     --bs-nav-tabs-link-active-bg: var(--bs-white);
     --bs-nav-tabs-link-active-border-color: var(--bs-light-border-subtle)
       var(--bs-light-border-subtle) var(--bs-white);
-    border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
+    border-bottom: var(--bs-nav-tabs-border-width) solid
+      var(--bs-nav-tabs-border-color);
 
     .btn {
       display: block;
@@ -937,7 +1100,8 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
       text-decoration: none;
       background-color: var(--bs-gray-200);
       border: var(--bs-nav-tabs-border-width) solid transparent;
-      border-radius: var(--bs-nav-tabs-border-radius) var(--bs-nav-tabs-border-radius) 0 0;
+      border-radius: var(--bs-nav-tabs-border-radius)
+        var(--bs-nav-tabs-border-radius) 0 0;
       margin-bottom: calc(-1 * var(--bs-nav-tabs-border-width));
       transition:
         color 0.15s ease-in-out,
@@ -979,11 +1143,11 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
 }
 
 #s-lg-er-cols {
-  &> #col1 {
+  & > #col1 {
     margin-bottom: 2rem;
   }
 
-  &> #col2 {
+  & > #col2 {
     h2 {
       font-size: var(--font-size-h4);
       margin: 0 0 1rem 0;
@@ -991,7 +1155,7 @@ body:has(#s-lg-er-cols) #s-lib-public-header-title {
       border-bottom: var(--bs-border-width) solid var(--bs-border-color);
     }
 
-    &> div {
+    & > div {
       border-radius: var(--bs-border-radius);
       border-width: var(--bs-border-width);
       border-style: var(--bs-border-style);
@@ -1008,7 +1172,7 @@ body:has(#s-lg-er-cols) #s-lg-public-skiplink {
   padding: 0 !important;
   margin: -1px !important;
   overflow: hidden !important;
-  clip: rect(0,0,0,0) !important;
+  clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
   position: absolute;

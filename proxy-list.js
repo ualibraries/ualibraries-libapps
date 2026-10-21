@@ -72,6 +72,10 @@ export const proxyList = [
     target: "https://customertesting-ua.libguides.com/tps_plan",
   },
   {
+    prefix: "/lg-guide-tps-multilingual",
+    target: "https://libguides.library.arizona.edu/tps/multilingual-education?bs5=1",
+  },
+  {
     prefix: "/lg-guide-tps-search",
     target: "https://libguides.library.arizona.edu/tps/search?bs5=1",
   },

@@ -1,3 +1,17 @@
+/* START group header styles */
+#hsl-tucson-group-header {
+  background-image:
+    linear-gradient(
+      RGBA(var(--bs-blue-rgb), 0.8),
+      RGBA(var(--bs-blue-rgb), 0.8)
+    ),
+    url("https://ualibraries-libapps-prod.s3.us-west-2.amazonaws.com/images/hsl_tucson_group_header.png");
+
+  background-size: cover;
+  background-position: center;
+}
+/* End group header styles */
+
 /* START box styles */
 /* Add .card styles to boxes */
 .s-lib-box {

@@ -57,6 +57,11 @@ img {
   max-width: 100%;
 }
 
+/* Hide First, Next, Previous, Last navigation links when the option is unchecked in admin interface */
+.pagination.s-lib-hide {
+  display: none;
+}
+
 /* Quick links */
 .btn-header,
 div#libchat_07713bc057f66ebcdccd4dd1b4a2be3e button.libchat_online,

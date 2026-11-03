@@ -33,3 +33,33 @@ test("A-Z Databases filter", async ({ page }) => {
   const az_item = page.locator(".az-item");
   await expect(az_item).toHaveScreenshot("az-item.png");
 });
+
+test("LibGuides tab layout", async ({ page }) => {
+  await page.goto("https://libguides.library.arizona.edu/learn-tutorials");
+
+  await page.waitForLoadState("networkidle");
+
+  await expect(page).toHaveScreenshot("libguides-tab-layout.png", {
+    fullPage: true,
+    mask: [page.locator("#s-lg-guide-main")],
+  });
+});
+
+test("LibGuides side-nav layout", async ({ page }) => {
+  await page.goto("https://libguides.library.arizona.edu/students-chatgpt");
+
+  await page.waitForLoadState("networkidle");
+
+  await expect(page).toHaveScreenshot("libguides-side-nav-layout.png", {
+    fullPage: true,
+    mask: [page.locator("#s-lib-public-main")],
+  });
+});
+
+test("LibGuides Teaching with Primary Sources", async ({ page }) => {
+  await page.goto("https://libguides.library.arizona.edu/tps/home");
+
+  await page.waitForLoadState("networkidle");
+
+  await expect(page).toHaveScreenshot("libguides-tps.png");
+});

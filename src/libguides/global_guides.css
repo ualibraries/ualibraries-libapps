@@ -10,6 +10,18 @@
   background-size: cover;
   background-position: center;
 }
+
+#speccoll-group-header {
+  background-image:
+    linear-gradient(
+      RGBA(var(--bs-blue-rgb), 0.8),
+      RGBA(var(--bs-blue-rgb), 0.8)
+    ),
+    url("https://ualibraries-libapps-prod.s3.us-west-2.amazonaws.com/images/speccoll_group_header.jpg");
+
+  background-size: cover;
+  background-position: center;
+}
 /* End group header styles */
 
 /* START box styles */
